@@ -20,7 +20,7 @@ export function SiteHeader() {
 
   return (
     <header className=" sticky top-0 z-50 w-full shadow text-gray-8 00 backdrop-blur">
-      <div className="container flex h-14 items-center">
+      <div className="flex h-14 p-1 items-center">
 
       <Link href='/' className='flex gap-2 flex-center'>
           <div style={{ width: '50px', height: '50px' }}>
