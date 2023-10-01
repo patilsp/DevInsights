@@ -6,7 +6,7 @@ export const GET = async (request, { params }) => {
         await connectToDB()
 
         const prompt = await Prompt.findById(params.id).populate("creator")
-        if (!prompt) return new Response("Prompt Not Found", { status: 404 });
+        if (!prompt) return new Response("Post Not Found", { status: 404 });
 
         return new Response(JSON.stringify(prompt), { status: 200 })
 
@@ -16,7 +16,7 @@ export const GET = async (request, { params }) => {
 }
 
 export const PATCH = async (request, { params }) => {
-    const { prompt, tag } = await request.json();
+    const { prompt, tag, imagePath, link, title } = await request.json();
 
     try {
         await connectToDB();
@@ -25,19 +25,21 @@ export const PATCH = async (request, { params }) => {
         const existingPrompt = await Prompt.findById(params.id);
 
         if (!existingPrompt) {
-            return new Response("Prompt not found", { status: 404 });
+            return new Response("Post not found", { status: 404 });
         }
 
         // Update the prompt with new data
         existingPrompt.prompt = prompt;
         existingPrompt.tag = tag;
         existingPrompt.imagePath = imagePath;
+        existingPrompt.link = link;
+        existingPrompt.title = title;
 
         await existingPrompt.save();
 
-        return new Response("Successfully updated the Prompts", { status: 200 });
+        return new Response("Successfully updated the Post", { status: 200 });
     } catch (error) {
-        return new Response("Error Updating Prompt", { status: 500 });
+        return new Response("Error Updating Post", { status: 500 });
     }
 };
 
@@ -48,8 +50,8 @@ export const DELETE = async (request, { params }) => {
         // Find the prompt by ID and remove it
         await Prompt.findByIdAndRemove(params.id);
 
-        return new Response("Prompt deleted successfully", { status: 200 });
+        return new Response("Post deleted successfully", { status: 200 });
     } catch (error) {
-        return new Response("Error deleting prompt", { status: 500 });
+        return new Response("Error deleting Post", { status: 500 });
     }
 };

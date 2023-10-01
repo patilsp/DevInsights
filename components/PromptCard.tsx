@@ -26,7 +26,33 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
   return (
     
-      <div className='prompt_card'>
+
+    
+      <div className='prompt_card '>       
+
+      <div className='my-4'>  
+        <Image
+          src={post.imagePath}
+          alt='post_image'
+          width={500} 
+          height={300}
+          className="rounded-sm"
+        />
+      </div>
+
+        <div className="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-03-16" className="text-gray-500">Mar 16, 2023</time>
+          <p
+          className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
+          onClick={() => handleTagClick && handleTagClick(post.tag)}
+        >
+          {post.tag}
+        </p>
+        </div>
+
+        <p className='my-4  text-sm text-gray-900 font-semibold'>{post.title}</p>
+        <p className='my-4  text-sm text-gray-700'>{post.prompt}</p>
+
         <div className='flex justify-between items-start gap-5'>
           <div
             className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
@@ -41,7 +67,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             />
 
             <div className='flex flex-col'>
-              <h3 className='font-satoshi font-semibold text-gray-900'>
+              <h3 className='font-semibold text-gray-900'>
                 {post.creator?.username}
               </h3>
               <p className='font-inter text-sm text-gray-500'>
@@ -63,26 +89,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             />
           </div>
         </div>   
-
-      <div className='my-4'>  
-        <Image
-          src={post.imagePath}
-          alt='post_image'
-          width={500} 
-          height={300}
-          className="rounded-sm"
-        />
-      </div>
-
-
-
-        <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
-        <p
-          className='font-inter text-sm blue_gradient cursor-pointer'
-          onClick={() => handleTagClick && handleTagClick(post.tag)}
-        >
-          #{post.tag}
-        </p>
+       
 
         {session?.user.id === post.creator?._id && pathName === "/profile" && (
           <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>

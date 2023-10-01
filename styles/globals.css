@@ -207,8 +207,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  box-shadow: 0 5px 10px rgba(0,0,0,.12);
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
 .flex-center {
@@ -259,3 +258,5 @@
     background-position: 200% center;
   }
 }
+
+

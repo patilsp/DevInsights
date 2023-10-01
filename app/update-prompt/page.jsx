@@ -10,7 +10,7 @@ const UpdatePrompt = () => {
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "", imagePath: ""});
+  const [post, setPost] = useState({ prompt: "", tag: "", imagePath: "", link: "", title: ""});
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,9 @@ const UpdatePrompt = () => {
       setPost({
         prompt: data.prompt,
         tag: data.tag,
-        imagePath: data.imagePath
+        imagePath: data.imagePath,
+        link: data.link,
+        title: data.title
       });
     };
 
@@ -41,6 +43,8 @@ const UpdatePrompt = () => {
           prompt: post.prompt,
           tag: post.tag,
           imagePath:post.imagePath,
+          link:post.link,
+          title:post.title,
         }),
       });
 

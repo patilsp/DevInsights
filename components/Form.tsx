@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Upload from "@/components/UploadDnD";
+import  Upload  from "@/components/UploadDnD";
+import { Textarea } from "@/registry/new-york/ui/textarea";
+import { Input } from "@/registry/new-york/ui/input";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUrl }) => {
   return (
@@ -15,14 +17,31 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
 
       <form
         onSubmit={handleSubmit}
-        className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'
+        className='mt-10 w-full max-w-2xl flex flex-col gap-7'
       >
+
+          <label>
+            <span className='font-satoshi font-semibold text-base text-gray-700'>
+              Post Title
+            </span>
+            <Input
+
+              value={post.title}
+              onChange={(e) => setPost({ ...post, title: e.target.value })}
+              type='text'
+              placeholder='Post Title'
+              required
+              className='form_input'
+              
+            />
+          </label>
+
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Your AI Prompt
+            Post Description
           </span>
 
-          <textarea
+          <Textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder='Write your post here'
@@ -32,21 +51,20 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
         </label>
 
         <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Field of Prompt{" "}
-            <span className='font-normal'>
-              (#product, #webdevelopment, #idea, etc.)
-            </span>
-          </span>
-          <input
+          <select
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            type='text'
-            placeholder='#Tag'
             required
             className='form_input'
-          />
+          >
+            <option value=''>Select a category</option>
+            <option value='aitool'>AI Tool</option>
+            <option value='programming'>Programming Language</option>
+            <option value='Database'>Database</option>
+        
+          </select>
         </label>
+
         <div className="w-full">
           <Upload onImageUpload={(fileUrl) => {
           
@@ -57,7 +75,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
             <span className='font-satoshi font-semibold text-base text-gray-700'>
               Image Path
             </span>
-            <input
+            <Input
 
               value={post.imagePath}
               onChange={(e) => setPost({ ...post, imagePath: e.target.value })}
@@ -68,6 +86,23 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
               
             />
           </label>
+
+          <label>
+            <span className='font-satoshi font-semibold text-base text-gray-700'>
+              Post Link
+            </span>
+            <Input
+
+              value={post.link}
+              onChange={(e) => setPost({ ...post, link: e.target.value })}
+              type='text'
+              placeholder='Post Link'
+              required
+              className='form_input'
+              
+            />
+          </label>
+
 
 
       

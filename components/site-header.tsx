@@ -36,9 +36,9 @@ export function SiteHeader() {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />
           </div>
-          <div className="flex items-center gap-2"> 
-            <Nav />
+          <div className="flex items-center gap-2">             
             <ModeToggle />
+            <Nav />
           </div>
         </div>
       </div>

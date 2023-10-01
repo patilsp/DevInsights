@@ -15,7 +15,13 @@ const PromptSchema = new Schema({
   },
   imagePath: {
     type: String,
-  }
+  },
+  link: {
+    type: String,
+  },
+  title: {
+    type: String,
+  },
 });
 
 
