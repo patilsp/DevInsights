@@ -5,6 +5,9 @@ import { useState, useEffect, useRef } from "react";
 import PromptCard from "./PromptCard";
 import { motion } from "framer-motion"
 
+import Lottie from "lottie-react"
+import animationData from "app/assets/skeleton.json"
+
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
     <div className='mt-12 prompt_layout'>
@@ -122,7 +125,12 @@ const Feed = () => {
         <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
       )}
 
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <p className="mt-4">
+        <div style={{ width: '420px', height: '420px' }}>
+            <Lottie animationData={animationData} />
+          </div>
+      </p>}
+
     </section>
   );
 };

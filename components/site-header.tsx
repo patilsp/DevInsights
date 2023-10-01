@@ -10,7 +10,7 @@ import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Button } from "@/components/ui/button"
-import Nav from "@components/Nav"
+import  Nav  from "@/components/Nav"
 import { motion } from "framer-motion"
 
 import Lottie from "lottie-react"
@@ -26,12 +26,10 @@ export function SiteHeader() {
           <div style={{ width: '50px', height: '50px' }}>
             <Lottie animationData={animationData} />
           </div>
-        <p className='logo_text animate font-extrabold leading-none tracking-tight text-gray-900 dark:text-white text-center'>DevInsights</p>
+        <p className=' logo_text animate font-extrabold leading-none tracking-tight text-gray-900 dark:text-white text-center mr-2'>DevInsights</p>
       </Link>
-      <div className='flex gap-2 flex-center'>      
-        <MainNav />
-      </div>
-        <MobileNav />
+     
+        {/* <MobileNav /> */}
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />

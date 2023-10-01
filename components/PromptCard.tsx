@@ -1,7 +1,8 @@
   "use client";
 
-  import { useState } from "react";
   import Image from "next/image";
+  import Link from "next/link";
+  import { useState } from "react";
   import { useSession } from "next-auth/react";
   import { usePathname, useRouter } from "next/navigation";
   import { motion } from "framer-motion";
@@ -87,7 +88,7 @@
                                     </div>
                               </div>
                               <div className="flex items-center gap-x-4 text-xs">
-                                        <time dateTime="2020-03-16" className="text-gray-500">Mar 16, 2023</time>
+                                        <time dateTime="2020-03-16" className="text-gray-400">Mar 16, 2023</time>
                                         <p
                                         className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
                                         onClick={() => handleTagClick && handleTagClick(post.tag)}
@@ -96,7 +97,9 @@
                                       </p>
                               </div>
                               <div className="grow mb-5">
-                                  <h2 className="text-xl text-slate-200 font-bold mb-1">{post.title}</h2>
+                              <Link href={post.link}>
+                                <h2 className="text-xl text-slate-200 font-bold mb-1">{post.title}</h2>
+                              </Link>
                                 
                                   <div className="mt-4 text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
                               </div>
