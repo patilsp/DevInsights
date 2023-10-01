@@ -13,7 +13,7 @@ export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <div className="mr-4 ml-4 md:flex">
+    <div className="mr-4 ml-4 hidden md:flex">
       <nav className="flex items-center space-x-6 text-sm font-medium">
         <Link
           href="/"

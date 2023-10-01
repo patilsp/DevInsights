@@ -38,6 +38,7 @@ export function SiteHeader() {
           </div>
           <div className="flex items-center gap-2"> 
             <Nav />
+            <ModeToggle />
           </div>
         </div>
       </div>
