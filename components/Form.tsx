@@ -31,7 +31,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
               type='text'
               placeholder='Post Title'
               required
-              className='form_input'
+              className='form_input p-2'
               
             />
           </label>
@@ -55,7 +55,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
             required
-            className='form_input'
+            className='form_input border'
           >
             <option value=''>Select a category</option>
             <option value='aitool'>AI Tool</option>

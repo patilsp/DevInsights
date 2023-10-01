@@ -19,7 +19,7 @@ import animationData from "app/assets/logo.json"
 export function SiteHeader() {
 
   return (
-    <header className=" sticky top-0 z-50 w-full border-b backdrop-blur">
+    <header className=" sticky top-0 z-50 w-full shadow text-gray-8 00 backdrop-blur">
       <div className="container flex h-14 items-center">
 
       <Link href='/' className='flex gap-2 flex-center'>
@@ -37,7 +37,7 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <div className="flex items-center gap-2">             
-            <ModeToggle />
+       
             <Nav />
           </div>
         </div>
