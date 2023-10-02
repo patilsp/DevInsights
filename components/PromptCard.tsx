@@ -6,6 +6,9 @@
   import { useSession } from "next-auth/react";
   import { usePathname, useRouter } from "next/navigation";
   import { motion } from "framer-motion";
+  import { FiHeart, FiMessageSquare, FiShare } from 'react-icons/fi';
+  import Button  from "@/components/share-button";
+  import GithubCard from "@/components/github-card";
 
   const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const { data: session } = useSession();
@@ -56,7 +59,7 @@
                                     <h3 className='font-semibold text-gray-200'>
                                       {post.creator?.username}
                                     </h3>
-                                    <p className='font-inter text-sm text-gray-300'>
+                                    <p className='font-inter text-sm text-gray-500'>
                                       {post.creator?.email}
                                     </p>
                                   </div>
@@ -76,7 +79,7 @@
                                 </div>
                               </div> 
                               <div className="relative inline-flex">
-                                  <div className="w-[60%] h-[60%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-600" aria-hidden="true"></div>
+                                  <div className="w-[60%] h-[60%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-400" aria-hidden="true"></div>
                                   <div className='my-4'>  
                                       <Image
                                         src={post.imagePath}
@@ -88,20 +91,37 @@
                                     </div>
                               </div>
                               <div className="flex items-center gap-x-4 text-xs">
-                                        <time dateTime="2020-03-16" className="text-gray-400">Mar 16, 2023</time>
-                                        <p
-                                        className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
-                                        onClick={() => handleTagClick && handleTagClick(post.tag)}
-                                      >
-                                        {post.tag}
-                                      </p>
+                                <time dateTime="2020-03-16" className="text-gray-400">Mar 16, 2023</time>
+                                  <p
+                                  className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
+                                  onClick={() => handleTagClick && handleTagClick(post.tag)}
+                                >
+                                  {post.tag}
+                                </p>
                               </div>
                               <div className="grow mb-5">
                               <Link href={post.link}>
-                                <h2 className="text-xl text-slate-200 font-bold mb-1">{post.title}</h2>
+                                <h2 className="text-xl text-slate-200 font-bold mb-1 hover:text-indigo-600">{post.title}</h2>
                               </Link>
                                 
                                   <div className="mt-4 text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
+                              </div>
+                              <div className="border-t py-2"></div>
+                            
+                              
+
+                              <div className="flex justify-between gap-5">
+                                <Button text="Like" icon={<FiHeart className="fill-slate-500 mr-2" />} />
+                                <Button
+                                  text="Comment"
+                                  icon={<FiMessageSquare className="fill-slate-500 mr-2" />}
+                                />
+                                <Button
+                                  text="Share"
+                                  icon={<FiShare className="fill-slate-500 mr-2" />}
+                                />
+
+                              
                               </div>
 
                               {session?.user.id === post.creator?._id && pathName === "/profile" && (
@@ -113,7 +133,7 @@
                                     Edit
                                   </p>
                                   <p
-                                    className='font-inter text-sm orange_gradient cursor-pointer'
+                                    className='font-inter orange_gradient font-inter cursor-pointer inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150'
                                     onClick={handleDelete}
                                   >
                                     Delete

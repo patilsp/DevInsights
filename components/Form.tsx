@@ -14,14 +14,14 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
         {type} and share amazing prompts with the world, and let your
         imagination run wild with any AI-powered platform
       </p>
-
+      <div className="rounded-xl border bg-card text-card-foreground shadow">
       <form
         onSubmit={handleSubmit}
-        className='mt-10 w-full max-w-2xl flex flex-col gap-7'
+        className='mt-10 w-full max-w-2xl flex flex-col gap-7 p-4'
       >
 
           <label>
-            <span className='font-satoshi font-semibold text-base text-gray-700'>
+            <span className=''>
               Post Title
             </span>
             <Input
@@ -37,7 +37,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           </label>
 
         <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>
+          <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
             Post Description
           </span>
 
@@ -65,14 +65,14 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           </select>
         </label>
 
-        <div className="w-full">
+        <div className="w-full border shadow rounded-md">
           <Upload onImageUpload={(fileUrl) => {
           
             setPost({ ...post, imagePath: fileUrl });
           }} />
         </div>
           <label>
-            <span className='font-satoshi font-semibold text-base text-gray-700'>
+            <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
               Image Path
             </span>
             <Input
@@ -88,7 +88,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           </label>
 
           <label>
-            <span className='font-satoshi font-semibold text-base text-gray-700'>
+            <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
               Post Link
             </span>
             <Input
@@ -120,6 +120,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           </Button>
         </div>
       </form>
+      </div>
     </section>
   );
 };

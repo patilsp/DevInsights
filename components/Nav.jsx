@@ -65,16 +65,19 @@ const Nav = () => {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <Link href="/profile">              
+
+          <Link href="/create-prompt">
+                <DropdownMenuItem>
+                  Create Post
+                  <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
+                </DropdownMenuItem>
+            </Link>
+
+
+            <Link href="/profile">
                 <DropdownMenuItem>
                   Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>              
-            </Link>
-            <Link href="/billing">
-                <DropdownMenuItem>
-                  Billing
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
                 </DropdownMenuItem>
             </Link>
             <Link href="/settings">
@@ -82,7 +85,15 @@ const Nav = () => {
                   Settings
                   <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                 </DropdownMenuItem>
-            </Link>          
+            </Link>     
+            <Link href="/">              
+                <DropdownMenuItem>
+                    Dashboard
+                  <DropdownMenuShortcut>⇧⌘D</DropdownMenuShortcut>
+                </DropdownMenuItem>              
+            </Link>
+            
+                
           </DropdownMenuGroup>
           <DropdownMenuSeparator />          
           <button

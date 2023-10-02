@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-
+import Image from "next/image";
 import PromptCard from "./PromptCard";
 import { motion } from "framer-motion"
 
@@ -125,11 +125,16 @@ const Feed = () => {
         <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
       )}
 
-      {isLoading && <p className="mt-4">
-        <div style={{ width: '420px', height: '420px' }}>
-            <Lottie animationData={animationData} />
-          </div>
-      </p>}
+      {isLoading && 
+      <div className='w-full flex justify-center items-center'>
+      <Image
+        src='assets/icons/loader.svg'
+        width={100}
+        height={100}
+        alt='loader'
+        className='object-contain'
+      />
+    </div>}
 
     </section>
   );
