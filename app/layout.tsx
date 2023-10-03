@@ -1,5 +1,4 @@
-import "@styles/globals.css";
-
+import "@/styles/globals.css"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
@@ -12,43 +11,56 @@ import { ThemeProvider } from "@/components/theme-provider"
 import  SessionProvider  from "@/components/Provider";
 import { Toaster } from "react-hot-toast"
 
-export const metadata = {
-  title: "DevInsights",
-  description: "Join the DevInsights Journey: Explore, Create, Share All the dev tools! ",
-  icons: {
-    icon: "/assets/images/logo1.svg",
+export const metadata: Metadata = {
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
   },
-};
+  description: siteConfig.description,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+}
 
-const RootLayout = ({ children }) => (
-  <>
-  <SessionProvider>
-    <html lang="en" suppressHydrationWarning>
-      
-    <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased bg-slate-900",
-          fontSans.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+interface RootLayoutProps {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <>
+    <SessionProvider>
+      <html lang="en" suppressHydrationWarning>
+        
+      <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
         >
-          <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
-              <div className="my-10 flex-1">{children}</div>
-            <SiteFooter />
-          </div>
-          <Toaster />
-          <TailwindIndicator />
-        </ThemeProvider>
-      </body>
-    </html>
-    </SessionProvider>
-  </>
-);
-
-export default RootLayout;
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+                <div className="flex-1">{children}</div>
+              <SiteFooter />
+            </div>
+            <Toaster />
+            <TailwindIndicator />
+          </ThemeProvider>
+        </body>
+      </html>
+      </SessionProvider>
+    </>
+  )
+}

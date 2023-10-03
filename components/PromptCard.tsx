@@ -103,10 +103,10 @@
                                 <time dateTime="2020-03-16" className="text-xs text-gray-400">Mar 16, 2023</time>
                                 <p className="text-xs text-gray-400"> 5min Read</p>
                                   <p
-                                  className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full py-1.5 font-medium text-gray-600 hover:bg-gray-100'
+                                  className='font-inter text-xs bg-slate-700 border border-slate-700 cursor-pointer rounded-sm px-2 pb-1 pt-0'
                                   onClick={() => handleTagClick && handleTagClick(post.tag)}
                                 >
-                                  {post.tag}
+                                  # {post.tag}
                                 </p>
                               </div>
                               <div className="grow mb-5">
