@@ -16,7 +16,7 @@ export const GET = async (request, { params }) => {
 }
 
 export const PATCH = async (request, { params }) => {
-    const { prompt, tag, imagePath, link, title } = await request.json();
+    const { title, prompt, tag, imagePath, link, createdDate } = await request.json();
 
     try {
         await connectToDB();
@@ -29,11 +29,13 @@ export const PATCH = async (request, { params }) => {
         }
 
         // Update the prompt with new data
+        existingPrompt.title = title;
         existingPrompt.prompt = prompt;
         existingPrompt.tag = tag;
         existingPrompt.imagePath = imagePath;
         existingPrompt.link = link;
-        existingPrompt.title = title;
+        existingPrompt.createdDate = createdDate;
+        
 
         await existingPrompt.save();
 

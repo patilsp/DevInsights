@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import  Upload  from "@/components/UploadDnD";
 import { Textarea } from "@/registry/new-york/ui/textarea";
 import { Input } from "@/registry/new-york/ui/input";
+import DatePickerWithRange from "@/registry/new-york/date-picker-with-range";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUrl }) => {
   return (
@@ -14,10 +15,10 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
         {type} and share amazing prompts with the world, and let your
         imagination run wild with any AI-powered platform
       </p>
-      <div className="rounded-xl border bg-card text-card-foreground shadow">
+     
       <form
         onSubmit={handleSubmit}
-        className='mt-10 w-full max-w-2xl flex flex-col gap-7 p-4'
+        className='rounded-xl border bg-slat-900 text-card-foreground shadow mt-10 w-full max-w-2xl flex flex-col gap-7 p-4'
       >
 
           <label>
@@ -61,6 +62,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
             <option value='aitool'>AI Tool</option>
             <option value='programming'>Programming Language</option>
             <option value='Database'>Database</option>
+            <option value='other'>Other</option>
         
           </select>
         </label>
@@ -85,6 +87,20 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
               className='form_input'
               
             />
+          </label>
+
+          <label>
+            <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
+                Pick a date
+            </span>
+
+            <DatePickerWithRange 
+            value={post.createdDate}
+            onChange={(e) => setPost({ ...post, createdDate: e.target.value })}
+            type='date'
+            placeholder='Date'
+            className="[&>button]:w-[260px]" />
+             
           </label>
 
           <label>
@@ -120,7 +136,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           </Button>
         </div>
       </form>
-      </div>
+
     </section>
   );
 };

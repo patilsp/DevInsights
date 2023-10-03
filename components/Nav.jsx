@@ -46,8 +46,8 @@ const Nav = () => {
           <div className="avatar relative h-8 w-8 rounded-full cursor-pointer">
             <Image
               src={session?.user.image}
-              width={37}
-              height={37}
+              width={32}
+              height={32}
               className='rounded-full'
               alt='profile'
               onClick={() => setToggleDropdown(!toggleDropdown)}

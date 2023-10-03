@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Excellent Service",
+  name: "devInsights",
   description:
     "Clean, Clear, Confident: Transforming Lives One Drop at a Time",
   mainNav: [
@@ -34,5 +34,6 @@ export const siteConfig = {
     twitter: "https://twitter.com/patilsp",
     github: "https://github.com/patilsp",
     docs: "https://ui.shadcn.com",
+    portfolio: "https://portfolio-santosh-patil.vercel.app/",
   },
 }

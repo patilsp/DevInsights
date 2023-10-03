@@ -11,7 +11,7 @@ const CreatePrompt = () => {
   const { data: session } = useSession();
 
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ prompt: "", tag: "", imagePath: "", link: "", title: ""});
+  const [post, setPost] = useState({ title: "", prompt: "", tag: "", imagePath: "", link: "", createdDate:""});
 
   const createPrompt = async (e) => {
     e.preventDefault();
@@ -21,17 +21,18 @@ const CreatePrompt = () => {
       const response = await fetch("/api/prompt/new", {
         method: "POST",
         body: JSON.stringify({
+          title: post.title,
           prompt: post.prompt,
           userId: session?.user.id,
           tag: post.tag,
           imagePath: post.imagePath,
           link: post.link,
-          title: post.title,
+          createdDate: post.createdDate,
         }),
       });
 
       if (response.ok) {
-        toast.success("Prompt has been created! 🔥");
+        toast.success("Post has been created! 🔥");
         router.push("/");
       }
     } catch (error) {

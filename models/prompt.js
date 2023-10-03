@@ -22,6 +22,9 @@ const PromptSchema = new Schema({
   title: {
     type: String,
   },
+  createdDate: {
+    type: Date,
+  }
 });
 
 

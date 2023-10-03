@@ -105,16 +105,16 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed p-4 m-2' ref={scrollRef}>
-      <form className='relative w-full flex-center'>
-        <input
+    <section className="feed p-4 m-2" ref={scrollRef}>
+      <form className="relative w-full flex-center">
+        {/* <input
           type='text'
           placeholder='Search for a tag or a username'
           value={searchText}
           onChange={handleSearchChange}
           required
           className='search_input peer   '
-        />
+        /> */}
       </form>
       {searchText ? (
         <PromptCardList
@@ -126,7 +126,7 @@ const Feed = () => {
       )}
 
       {isLoading && 
-      <div className='w-full flex justify-center items-center'>
+      <div className="h-screen flex justify-center items-center">
       <Image
         src='assets/icons/loader.svg'
         width={100}

@@ -6,7 +6,7 @@
   import { useSession } from "next-auth/react";
   import { usePathname, useRouter } from "next/navigation";
   import { motion } from "framer-motion";
-  import { FiHeart, FiMessageSquare, FiShare } from 'react-icons/fi';
+  import { FiHeart, FiMessageSquare, FiShare, FiMoreVertical } from 'react-icons/fi';
   import Button  from "@/components/share-button";
   import GithubCard from "@/components/github-card";
 
@@ -65,7 +65,16 @@
                                   </div>
                                 </div>
 
-                                <div className='copy_btn' onClick={handleCopy}>
+                                <Button
+                                  
+                                  icon={<FiMoreVertical className="fill-slate-500"  />}
+                                />
+
+                                {/* <div>
+                                  <FiMoreVertical className="fill-slate-500 bg-transparent h-5 w-5" />
+                                </div> */}
+
+                                {/* <div className='copy_btn' onClick={handleCopy}>
                                   <Image
                                     src={
                                       copied === post.prompt
@@ -76,7 +85,7 @@
                                     width={12}
                                     height={12}
                                   />
-                                </div>
+                                </div> */}
                               </div> 
                               <div className="relative inline-flex">
                                   <div className="w-[60%] h-[60%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-400" aria-hidden="true"></div>
