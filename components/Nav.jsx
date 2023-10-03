@@ -39,7 +39,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className='flex-between w-full px-4'>     
+    <nav className='flex-between w-full'>     
     {session?.user ? (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -101,7 +101,7 @@ const Nav = () => {
             onClick={() => {
               signOut();
             }}
-            className='px-2 block text-sm'
+            className='px-2 py-2 block text-sm w-full text-left hover:bg-slate-800'
           >
             Sign Out
           </button>
