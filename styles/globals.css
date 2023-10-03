@@ -175,7 +175,7 @@
 }
 
 .prompt_layout {
-  @apply space-y-6 sm:columns-2 xl:columns-3;
+  @apply w-full space-y-6 sm:columns-2 xl:columns-4;
 }
 
 /* Feed Component */
@@ -348,4 +348,7 @@
   }
 }
 
-
+.card {
+  display: flex !important;
+  align-items: stretch !important;
+}

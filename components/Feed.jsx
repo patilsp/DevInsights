@@ -107,14 +107,28 @@ const Feed = () => {
   return (
     <section className="feed p-4 m-2" ref={scrollRef}>
       <form className="relative w-full flex-center">
-        {/* <input
-          type='text'
-          placeholder='Search for a tag or a username'
-          value={searchText}
-          onChange={handleSearchChange}
-          required
-          className='search_input peer   '
-        /> */}
+        <div className="flex justify-between items-center p-4 bg-gray-900 text-white w-full">
+          <div className="flex items-center">
+            <h1 className="text-xl">My Feeds <span className="font-normal">⌘</span></h1>
+          </div>
+          <div className="flex items-center space-x-4">
+            
+            <div className="relative w-full justify-start text-sm text-muted-foreground">
+              {/* Search Input */}
+              <input
+                type="text"
+                placeholder="Search post ..."
+                value={searchText}
+                onChange={handleSearchChange}
+                required
+                className="inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+              />
+             <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+              <span className="text-xs p-1">⌘</span>S
+            </kbd>
+            </div>
+          </div>
+        </div>
       </form>
       {searchText ? (
         <PromptCardList

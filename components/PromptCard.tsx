@@ -100,9 +100,10 @@
                                     </div>
                               </div>
                               <div className="flex items-center gap-x-4 text-xs">
-                                <time dateTime="2020-03-16" className="text-gray-400">Mar 16, 2023</time>
+                                <time dateTime="2020-03-16" className="text-xs text-gray-400">Mar 16, 2023</time>
+                                <p className="text-xs text-gray-400"> 5min Read</p>
                                   <p
-                                  className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
+                                  className='font-inter text-sm blue_gradient bg-orange-500 cursor-pointer rounded-full py-1.5 font-medium text-gray-600 hover:bg-gray-100'
                                   onClick={() => handleTagClick && handleTagClick(post.tag)}
                                 >
                                   {post.tag}
@@ -110,19 +111,19 @@
                               </div>
                               <div className="grow mb-5">
                               <Link href={post.link}>
-                                <h2 className="text-xl text-slate-200 font-bold mb-1 hover:text-indigo-600">{post.title}</h2>
+                                <h2 className=" text-slate-200 font-bold mb-1 hover:text-indigo-600">{post.title}</h2>
                               </Link>
                                 
-                                  <div className="mt-4 text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
+                                  <div className="text-sm mt-4 text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
                               </div>
                               <div className="border-t py-2"></div>
                             
                               
 
                               <div className="flex justify-between gap-5">
-                                <Button text="Like" icon={<FiHeart className="fill-slate-500 mr-2" />} />
+                                <Button text="5" icon={<FiHeart className="fill-slate-500 mr-2 border-none" />} />
                                 <Button
-                                  text="Comment"
+                                  text="10"
                                   icon={<FiMessageSquare className="fill-slate-500 mr-2" />}
                                 />
                                 <Button
