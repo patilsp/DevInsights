@@ -56,11 +56,11 @@
                                   />
 
                                   <div className='flex flex-col'>
-                                    <h3 className='font-semibold text-gray-200'>
+                                    <h3 className='font-sm text-gray-200'>
                                       {post.creator?.username}
                                     </h3>
-                                    <p className='font-inter text-sm text-gray-500'>
-                                      {post.creator?.email}
+                                    <p className='font-inter text-xs text-gray-500'>
+                                      Posted 10 hours ago
                                     </p>
                                   </div>
                                 </div>
