@@ -55,7 +55,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder='Write your post here'
             required
-            className='form_textarea '
+            className='form_textarea'
+            maxLength={300}
           />
         </label>
 
@@ -81,13 +82,15 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
               value={post.tag}
               onChange={(e) => setPost({ ...post, tag: e.target.value })}
               required
-              className='form_input border'
+              className='form_input bg-transparent   border'
             >
               <option value=''>Select a category</option>
-              <option value='aitool'>AI Tool</option>
+              <option value='AI-Tool'>AI Tool</option>
               <option value='programming'>Programming Language</option>
               <option value='Database'>Database</option>
-              <option value='library'>library</option>
+              <option value='Library'>Library</option>
+              <option value='Framework'>Framework</option>
+              <option value='Extension'>Extension</option>
               <option value='other'>Other</option>
           
             </select>
@@ -116,7 +119,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
             />
           </label>
 
-          <label>
+          {/* <label>
             <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
                 Pick a date
             </span>
@@ -128,7 +131,22 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
             placeholder='Date'
             className="[&>button]:w-[260px]" />
              
+          </label> */}
+
+          <label>
+            <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
+              Created Date
+            </span>
+            <Input
+              value={post.createdDate}
+              onChange={(e) => setPost({ ...post, createdDate: e.target.value })}
+              type='text'
+              placeholder='Created Date'
+              
+              className='form_input'
+            />
           </label>
+
 
           <label>
             <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
