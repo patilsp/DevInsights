@@ -27,23 +27,8 @@ export const metadata: Metadata = {
 export default function MusicPage() {
   return (
     <>
-      <div className="md:hidden">
-        <Image
-          src="/examples/music-light.png"
-          width={1280}
-          height={1114}
-          alt="Music"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/music-dark.png"
-          width={1280}
-          height={1114}
-          alt="Music"
-          className="hidden dark:block"
-        />
-      </div>
-      <div className="hidden md:block">
+      
+      <div className="block">
         <Menu />
         <div className="border-t">
           <div className="bg-background">
