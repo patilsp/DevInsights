@@ -36,7 +36,7 @@
     <div className="max-w-sm mx-auto flex gap-6 items-start lg:max-w-none">
                    
                   <div className="relative h-full bg-slate-800 rounded-3xl p-px before:absolute before:w-80 before:h-80 before:-left-40 before:-top-40 before:bg-slate-400 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-indigo-500 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] overflow-hidden shadow">
-                      <div className="relative h-full bg-slate-900 p-4 pb-8 rounded-[inherit] z-20 overflow-hidden ">
+                      <div className="relative h-full bg-slate-900 p-4 rounded-[inherit] z-20 overflow-hidden ">
                         
                           <div className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square" aria-hidden="true">
                               <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[80px]"></div>
@@ -44,14 +44,14 @@
                           <div className="flex flex-col h-full">
                           <div className='flex justify-between items-start gap-5'>
                                 <div
-                                  className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
+                                  className='flex-1 flex justify-start items-center gap-1 cursor-pointer'
                                   onClick={handleProfileClick}
                                 >
                                   <Image
                                     src={post.creator?.image}
                                     alt='user_image'
-                                    width={40}
-                                    height={40}
+                                    width={35}
+                                    height={35}
                                     className='rounded-full object-contain border shadow'
                                   />
 
@@ -99,7 +99,7 @@
                                       />
                                     </div>
                               </div>
-                              <div className="flex items-center gap-x-4 text-xs">
+                              <div className="flex justify-between gap-5 text-xs">
                                 <time dateTime="2020-03-16" className="text-xs text-gray-400">Mar 16, 2023</time>
                                 <p className="text-xs text-gray-400"> 5min Read</p>
                                   <p
@@ -109,14 +109,14 @@
                                   # {post.tag}
                                 </p>
                               </div>
-                              <div className="grow mb-5">
+                              <div className="grow mb-2">
                               <Link href={post.link}>
                                 <h2 className=" text-slate-200 font-bold mb-1 hover:text-indigo-600">{post.title}</h2>
                               </Link>
                                 
                                   <div className="text-sm mt-4 text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
                               </div>
-                              <div className="border-t py-2"></div>
+                              <div className="border-t"></div>
                             
                               
 

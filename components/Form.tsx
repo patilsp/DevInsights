@@ -77,23 +77,21 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
 
         <div className="grid gap-2">
             <Label htmlFor="area">Post Category</Label>
-            <Select
-                value={post.tag}
-                onChange={(e) => setPost({ ...post, tag: e.target.value })}
-              >
-              <SelectTrigger id="area">
-                <SelectValue placeholder="Select" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="aitool">Ai Tool</SelectItem>
-                <SelectItem value="DevOps">DevOps</SelectItem>
-                <SelectItem value="MobileApp">Mobile App</SelectItem>
-                <SelectItem value="language">Programming Language</SelectItem>
-                <SelectItem value="account">Account</SelectItem>
-                <SelectItem value="Database">Database</SelectItem>
-                <SelectItem value="Other">Other</SelectItem>
-              </SelectContent>
-            </Select>
+              <select
+              value={post.tag}
+              onChange={(e) => setPost({ ...post, tag: e.target.value })}
+              required
+              className='form_input border'
+            >
+              <option value=''>Select a category</option>
+              <option value='aitool'>AI Tool</option>
+              <option value='programming'>Programming Language</option>
+              <option value='Database'>Database</option>
+              <option value='library'>library</option>
+              <option value='other'>Other</option>
+          
+            </select>
+            
           </div>
 
         <div className="w-full border shadow rounded-md">
