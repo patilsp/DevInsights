@@ -55,7 +55,7 @@ const Nav = () => {
                                     <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
                                 </DropdownMenuItem>
                             </Link>
-                            <Link href="/settings">
+                            <Link href="/forms">
                                 <DropdownMenuItem>
                                     Settings
                                     <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
