@@ -24,6 +24,10 @@ const Nav = () => {
         })();
     }, []);
 
+    if (!session?.user) {
+        return null;
+    }
+
     return (
         <nav className="flex-between mr-1 w-full">
             {session?.user ? (

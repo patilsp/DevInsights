@@ -4,7 +4,7 @@ import { FiYoutube, FiGithub, FiX, FiFacebook, FiInstagram } from 'react-icons/f
 export function SiteFooter() {
   return (
     <footer className="py-2 md:py-0">
-      <div className="container flex flex-col items-center justify-between gap-4 py-4">
+      <div className="flex flex-col items-center justify-between gap-4 py-4">
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
           Built by{" "}
           <a

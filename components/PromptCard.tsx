@@ -105,7 +105,7 @@
                                   className='font-inter cursor-pointer rounded-sm border border-slate-700 bg-slate-700 px-1 pb-1 pt-0 text-xs'
                                   onClick={() => handleTagClick && handleTagClick(post.tag)}
                                 >
-                                  # {post.tag}
+                                 {post.tag}
                                 </p>
                               </div>
                               <div className="mb-2 grow">

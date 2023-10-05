@@ -105,7 +105,7 @@ const Feed = () => {
   };
 
   return (
-    <section className="feed m-2 p-4" ref={scrollRef}>
+    <section className="feed " ref={scrollRef}>
       <form className="flex-center relative w-full">
         <div className="flex w-full items-center justify-between bg-gray-900 p-4 text-white">
           <div className="flex items-center">
