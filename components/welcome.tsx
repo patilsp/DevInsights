@@ -16,7 +16,7 @@ const Welcome = () => {
 
               <div className="p-2">
                     
-                    <div className='flex justify-center mb-2'>
+                    <div className='flex justify-center text-center mb-2'>
                         <h1 className=" text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white">Welcome to DevInsights
                         </h1>
                     </div>
@@ -26,14 +26,21 @@ const Welcome = () => {
                 </div>
                 
                   <div className="mt-10 w-full flex justify-center items-center">
-                    <Link href="/authentication" legacyBehavior>
+                    {/* <Link href="/authentication" legacyBehavior>
                       <a className="button learn-more">
                         <span className="circle" aria-hidden="true">
                           <span className="icon arrow"></span>
                         </span>
                         <span className="button-text">Let's Get Started</span>
                       </a>
+                    </Link> */}
+
+                      <Link
+                        href="/authentication"
+                        className="mt-4 h-10 px-6 font-semibold rounded-md bg-white text-black flex-center">
+                        Let's Get Started
                     </Link>
+
                   </div>
 
 

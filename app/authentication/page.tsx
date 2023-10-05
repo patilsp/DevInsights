@@ -5,16 +5,11 @@ import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/new-york/ui/button"
-import { UserAuthForm } from "@/app/authentication/components/user-auth-form"
+import { UserAuthForm } from "./components/user-auth-form"
 import Lottie from"lottie-react";
 import animationData from "@/assets/animation1.json";
 
-export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
-}
-
-export default function AuthenticationPage() {
+export default function Page() {
   return (
     <>
       
