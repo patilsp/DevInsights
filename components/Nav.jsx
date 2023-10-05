@@ -25,11 +25,11 @@ const Nav = () => {
     }, []);
 
     return (
-        <nav className="flex-between w-full">
+        <nav className="flex-between mr-1 w-full">
             {session?.user ? (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <div className="avatar relative h-8 w-8 rounded-full cursor-pointer">
+                        <div className="avatar relative h-8 w-8 cursor-pointer rounded-full">
                             <Image src={session?.user.image} width={32} height={32} className="rounded-full" alt="profile" onClick={() => setToggleDropdown(!toggleDropdown)} />
                         </div>
                     </DropdownMenuTrigger>
@@ -74,7 +74,7 @@ const Nav = () => {
                             onClick={() => {
                                 signOut();
                             }}
-                            className="px-2 py-2 block text-sm w-full text-left hover:bg-slate-800"
+                            className="block w-full p-2 text-left text-sm hover:bg-slate-800"
                         >
                             Sign Out
                         </button>

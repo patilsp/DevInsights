@@ -1,5 +1,5 @@
 "use client";
-import Feed from "@components/Feed";
+import Feed from "@/components/Feed";
 import { motion } from "framer-motion"
 
 const Home = () => (
@@ -8,7 +8,7 @@ const Home = () => (
     initial={{ opacity: 0, scale: 0.8 }}
     transition={{ ease: "easeOut" }}
   >
-  <section className='w-full flex-center flex-col'>
+  <section className='flex-center w-full flex-col'>
     <Feed />
   </section>
   </motion.div>

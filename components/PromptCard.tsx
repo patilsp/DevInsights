@@ -7,8 +7,7 @@
   import { usePathname, useRouter } from "next/navigation";
   import { motion } from "framer-motion";
   import { FiHeart, FiMessageSquare, FiShare, FiMoreVertical } from 'react-icons/fi';
-  import Button  from "@/components/share-button";
-  import GithubCard from "@/components/github-card";
+  import { Button } from "@/components/ui/button"
 
   const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const { data: session } = useSession();
@@ -31,20 +30,20 @@
     return (
       
 
-<div className="relative flex flex-row justify-center overflow-hidden prompt_layout">
-  <div className="w-full mx-auto px-2 py-2">
-    <div className="max-w-sm mx-auto flex gap-6 items-start lg:max-w-none">
+<div className="prompt_layout relative flex flex-row justify-center overflow-hidden">
+  <div className="mx-auto w-full p-2">
+    <div className="mx-auto flex max-w-sm items-start gap-6 lg:max-w-none">
                    
-                  <div className="relative h-full bg-slate-800 rounded-3xl p-px before:absolute before:w-80 before:h-80 before:-left-40 before:-top-40 before:bg-slate-400 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-indigo-700 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] overflow-hidden shadow ">
-                      <div className="relative h-full bg-white dark:bg-slate-900 p-4 rounded-[inherit] z-20 overflow-hidden ">
+                  <div className="relative h-full overflow-hidden rounded-3xl bg-slate-800 p-px shadow before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-slate-400 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-indigo-700 after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-10 before:group-hover:opacity-100 ">
+                      <div className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-slate-900 p-4 ">
                         
-                          <div className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square" aria-hidden="true">
-                              <div className="absolute inset-0 translate-z-0 bg-slate-800 rounded-full blur-[80px]"></div>
+                          <div className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/2 -translate-x-1/2 translate-y-1/2" aria-hidden="true">
+                              <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[80px]"></div>
                           </div>
-                          <div className="flex flex-col h-full">
-                          <div className='flex justify-between items-start gap-5'>
+                          <div className="flex h-full flex-col">
+                          <div className='flex items-start justify-between gap-5'>
                                 <div
-                                  className='flex-1 flex justify-start items-center gap-1 cursor-pointer'
+                                  className='flex flex-1 cursor-pointer items-center justify-start gap-1'
                                   onClick={handleProfileClick}
                                 >
                                   <Image
@@ -52,15 +51,15 @@
                                     alt='user_image'
                                     width={35}
                                     height={35}
-                                    className='rounded-full object-contain border shadow'
+                                    className='rounded-full border object-contain shadow'
                                   />
 
                                   <div className='flex flex-col'>
-                                    <h3 className='font-sm text-gray-200'>
+                                    <h3 className='font-semibold text-gray-200'>
                                       {post.creator?.username}
                                     </h3>
-                                    <p className='font-inter text-xs text-gray-500'>
-                                      Posted 10 hours ago
+                                    <p className='font-inter text-sm text-gray-500'>
+                                      {post.creator?.email}
                                     </p>
                                   </div>
                                 </div>
@@ -88,7 +87,7 @@
                                 </div> */}
                               </div> 
                               <div className="relative inline-flex">
-                                  <div className="w-[60%] h-[60%] absolute inset-0 m-auto -translate-y-[10%] blur-3xl -z-10 rounded-full bg-indigo-400" aria-hidden="true"></div>
+                                  <div className="absolute inset-0 z-10 m-auto rounded-full bg-indigo-400 blur-3xl" aria-hidden="true"></div>
                                   <div className='my-4'>  
                                       <Image
                                         src={post.imagePath}
@@ -103,47 +102,47 @@
                                 <time dateTime="2020-03-16" className="text-xs text-gray-400">Mar 16, 2023</time>
                                 <p className="text-xs text-gray-400"> 5min Read</p>
                                   <p
-                                  className='font-inter text-xs bg-slate-700 border border-slate-700 cursor-pointer rounded-sm px-1 pb-1 pt-0'
+                                  className='font-inter cursor-pointer rounded-sm border border-slate-700 bg-slate-700 px-1 pb-1 pt-0 text-xs'
                                   onClick={() => handleTagClick && handleTagClick(post.tag)}
                                 >
                                   # {post.tag}
                                 </p>
                               </div>
-                              <div className="grow mb-2">
+                              <div className="mb-2 grow">
                               <Link href={post.link}>
-                                <h2 className=" text-slate-200 font-bold mb-1 hover:text-indigo-600">{post.title}</h2>
+                                <h2 className=" mb-1 font-bold text-slate-200 hover:text-indigo-600">{post.title}</h2>
                               </Link>
                                 
-                                  <div className="text-sm mt-4 text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
+                                  <div className="mt-4 text-sm text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
                               </div>
                               <div className="border-t"></div>
                             
                               
 
                               <div className="flex justify-between gap-5">
-                                <Button text="5" icon={<FiHeart className="fill-slate-500 mr-2 border-none" />} />
+                                <Button text="5" icon={<FiHeart className="mr-2 border-none fill-slate-500" />} />
                                 <Button
                                   text="10"
-                                  icon={<FiMessageSquare className="fill-slate-500 mr-2" />}
+                                  icon={<FiMessageSquare className="mr-2 fill-slate-500" />}
                                 />
                                 <Button
                                   text="Share"
-                                  icon={<FiShare className="fill-slate-500 mr-2" />}
+                                  icon={<FiShare className="mr-2 fill-slate-500" />}
                                 />
 
                               
                               </div>
 
                               {session?.user.id === post.creator?._id && pathName === "/profile" && (
-                                <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+                                <div className='flex-center mt-5 gap-4 border-t border-gray-100 pt-3'>
                                   <p
-                                    className='font-inter green_gradient cursor-pointer inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150'
+                                    className='font-inter green_gradient inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-sm font-medium text-slate-300 transition-colors duration-150 hover:bg-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600'
                                     onClick={handleEdit}
                                   >
                                     Edit
                                   </p>
                                   <p
-                                    className='font-inter orange_gradient font-inter cursor-pointer inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150'
+                                    className='font-inter orange_gradient font-inter inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-sm font-medium text-slate-300 transition-colors duration-150 hover:bg-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600'
                                     onClick={handleDelete}
                                   >
                                     Delete

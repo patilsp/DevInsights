@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "devInsights",
+  name: "DevInsights",
   description:
     "Clean, Clear, Confident: Transforming Lives One Drop at a Time",
   mainNav: [
@@ -11,20 +11,13 @@ export const siteConfig = {
     },
     {
       title: "Dashboard",
-      href: "/dashboard",
+      href: "/",
     },
     {
-      title: "Customers",
-      href: "/customers",
+      title: "My Profile",
+      href: "/profile",
     },
-    {
-      title: "Products",
-      href: "/products",
-    },
-    {
-      title: "Tasks",
-      href: "/tasks",
-    },
+   
      {
       title: "Settings",
       href: "/forms",
@@ -33,7 +26,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/patilsp",
     github: "https://github.com/patilsp",
-    docs: "https://ui.shadcn.com",
+    docs: "#",
     portfolio: "https://portfolio-santosh-patil.vercel.app/",
   },
 }

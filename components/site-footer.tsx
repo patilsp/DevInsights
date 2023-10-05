@@ -3,8 +3,8 @@ import { FiYoutube, FiGithub, FiX, FiFacebook, FiInstagram } from 'react-icons/f
 
 export function SiteFooter() {
   return (
-    <footer className="py-6 md:px-8 md:py-0 mt-10">
-      <div className="container flex flex-col items-center justify-between gap-4 mb-5">
+    <footer className="py-2 md:py-0">
+      <div className="container flex flex-col items-center justify-between gap-4 py-4">
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
           Built by{" "}
           <a
@@ -28,7 +28,7 @@ export function SiteFooter() {
         </p>
       </div>
 
-      <div className="flex justify-center gap-2 w-full mb-10">
+      <div className="mb-10 flex w-full justify-center gap-2">
         <div className="glassIcon"><FiFacebook className=""></FiFacebook></div>
         <div className="glassIcon"><FiInstagram className=""></FiInstagram></div>
         <div className="glassIcon"><FiYoutube className=""></FiYoutube></div>

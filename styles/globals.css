@@ -1,153 +1,120 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
 
 
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
   }
 }
 
 
-
- 
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
-
-.main {
-  width: 100vw;
-  min-height: 100vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  /* padding: 120px 24px 160px 24px; */
-  pointer-events: none;
+.nav-bar {
+  z-index: 999 !important;
+}
+.custom-shadow{
+  box-shadow: 0.1em 0.1em 0.3em 0.1em #f0f0f8;
 }
 
-.main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
-  position: absolute;
-  content: "";
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  top: 0;
+.icon-block{
+  @apply mr-5 mb-4 flex w-fit flex-row items-center gap-2 overflow-visible rounded-2xl border text-white  border-transparent py-2 pl-2 pr-3 shadow sm:gap-3 sm:py-2.5 sm:pl-3 sm:pr-5;
+}
+.img-icon{
+  @apply h-8 w-8 bg-white p-2 rounded-xl custom-shadow;
+}
+.cl-internal-b3fm6y{
+  display: none
+}
+.cl-internal-uyu30o{
+  display: none 
 }
 
-.main:after {
-  content: "";
-  background-image: url("/assets/images/grid.svg");
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  opacity: 0.4;
-  filter: invert(1);
+
+.cl-internal-17ydaof{
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 0px 5px !important;
+}
+.cl-internal-19xp6v9{
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 0px 5px !important;
+}
+.cl-internal-1fsg6zy {
+  background-color: hsl(var(--primary)) !important;
 }
 
-.gradient {
-  height: fit-content;
-  z-index: 3;
-  width: 100%;
-  max-width: 640px;
-  background-image: radial-gradient(
-      at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
-    radial-gradient(at 97% 21%, rgb(43, 197, 55) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, rgb(253, 10, 34) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, rgb(91, 51, 202) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, rgb(252, 214, 149) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, rgb(93, 128, 211) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, rgb(241, 150, 176) 0px, transparent 50%);
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  filter: blur(100px) saturate(150%);
-  top: 80px;
-  opacity: 0.15;
+.cl-headerTitle{
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all .2s;
+
+}
+h1{
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all .2s;
 }
 
-@media screen and (max-width: 640px) {
-  .main {
-    padding: 0;
-  }
-}
-
-/* Tailwind Styles */
-
-.app {
-  @apply relative z-10 flex justify-center items-center flex-col w-full mx-auto;
-}
-
-.black_btn {
-  @apply inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150;
-}
 
 .outline_btn {
-  @apply rounded border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm  flex items-center justify-center;
-}
-
-.btn-default{
-  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2;
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all;
 }
 
 .head_text {
@@ -183,15 +150,15 @@
 }
 
 .prompt_layout {
-  @apply w-full space-y-6 sm:columns-2 xl:columns-4;
+  @apply space-y-6 sm:columns-2 sm:gap-6 xl:columns-3;
 }
 
-/* Feed Component */
+
 .feed {
-  @apply mt-8 mx-auto w-full flex justify-center items-center flex-col gap-2;
+  @apply mx-auto w-full flex justify-center items-center flex-col gap-2;
 }
 
-/* Form Component */
+
 .form_textarea {
   @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
@@ -200,22 +167,20 @@
   @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
-/* Nav Component */
+
 .logo_text {
-  @apply max-sm:hidden  font-bold text-lg text-black ;
+  @apply max-sm:hidden  font-semibold text-lg text-black tracking-wide;
 }
 
 .dropdown {
   @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-start;
 }
 
-.dropdown_link {
-  @apply text-sm  text-gray-700 hover:text-gray-500 font-medium;
-}
 
-/* PromptCard Component */
+
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  box-shadow: 0 5px 10px rgba(0,0,0,.12);
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
 .flex-center {
@@ -236,8 +201,10 @@
 
 
 .notification_btn {
-  @apply p-2 me-1 mr-2 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  @apply p-2 me-1 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
 }
+
+
 
 .animate
 {
@@ -370,23 +337,6 @@
     border-color: rgb(126 34 206/var(--tw-border-opacity));
 }
 
-.btn {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  background-color: rgb(255 255 255/var(--tw-bg-opacity));
-  padding: 0.875rem 1.75rem 0.75rem;
-  text-align: center;
-  font-weight: 500;
-  text-transform: capitalize;
-  outline-width: 0;
-  outline-offset: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-duration: .3s;
-}
 .btn-dark {
   --tw-bg-opacity: 1;
   --tw-text-opacity: 1;
@@ -441,4 +391,3 @@
 /* .glassIcon:hover:before{
   transform: skew(45deg) translateX(calc(100px * -1 - 50%));
 } */
-

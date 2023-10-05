@@ -40,14 +40,14 @@ import {
 
 export function SiteHeader() {
    return (
-    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-slate-900 backdrop-blur">
-      <div className="px-2 flex h-14 items-center">
+    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+      <div className="flex h-14 items-center px-2">
         <MobileNav />
-        <Link href='/' className='flex gap-2 flex-center'>
+        <Link href='/' className='flex-center flex gap-2'>
             <div style={{ width: '40px', height: '40px' }}>
               <Lottie animationData={animationData} />
             </div>
-            <p className='logo_text animate font-extrabold leading-none tracking-tight text-gray-900 dark:text-white text-center mr-2'>DevInsights</p>
+            <p className='logo_text animate mr-2 text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
         </Link>
 
         
@@ -55,7 +55,7 @@ export function SiteHeader() {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />
           </div>
-          <nav className="flex items-center gap-2">
+          <nav className="flex items-center">
               {/* <ModeToggle /> */}
 
               <div className="w-full flex-1 md:w-auto md:flex-none">
@@ -63,11 +63,11 @@ export function SiteHeader() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="">                
+                <button variant="ghost" className="btn mr-2 mt-1">                
                   <FiBell size={24}  />
-                </Button>
+                </button>
               </DropdownMenuTrigger>      
-              <DropdownMenuContent className="w-100 py-4 px-4" align="end" forceMount>
+              <DropdownMenuContent className="w-100 p-4" align="end" forceMount>
               <Card className="border-none">
                 <CardHeader className="pb-3">
                   <CardTitle>Notifications</CardTitle>

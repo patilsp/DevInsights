@@ -10,7 +10,7 @@ import animationData from "app/assets/skeleton.json"
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-12 prompt_layout'>
+    <div className='prompt_layout mt-5'>
       {data.map((post) => (
         <motion.div
           key={post._id}
@@ -69,6 +69,7 @@ const Feed = () => {
 
     return () => {
       if (scrollRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         scrollRef.current.removeEventListener("scroll", handleScroll);
       }
     };
@@ -105,11 +106,11 @@ const Feed = () => {
   };
 
   return (
-    <section className="feed p-4 m-2" ref={scrollRef}>
-      <form className="relative w-full flex-center">
-        <div className="flex justify-between items-center p-4 bg-gray-900 text-white w-full">
+    <section className="feed m-2 p-4" ref={scrollRef}>
+      <form className="flex-center relative w-full">
+        <div className="flex w-full items-center justify-between bg-gray-900 p-4 text-white">
           <div className="flex items-center">
-            <h1 className="text-xl">My Feeds <span className="font-normal">⌘</span></h1>
+            <h1 className="sm:text-1xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 ">My Feeds <span className="font-normal">⌘</span></h1>
           </div>
           <div className="flex items-center space-x-4">
             
@@ -121,10 +122,10 @@ const Feed = () => {
                 value={searchText}
                 onChange={handleSearchChange}
                 required
-                className="inline-flex items-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+                className="relative inline-flex h-9 w-full items-center justify-start rounded-md border border-input bg-transparent px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 sm:pr-12 md:w-40 lg:w-64"
               />
              <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-              <span className="text-xs p-1">⌘</span>S
+              <span className="p-1 text-xs">⌘</span>S
             </kbd>
             </div>
           </div>
@@ -140,7 +141,7 @@ const Feed = () => {
       )}
 
       {isLoading && 
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex h-screen items-center justify-center">
       <Image
         src='assets/icons/loader.svg'
         width={100}

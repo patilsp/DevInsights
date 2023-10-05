@@ -8,8 +8,8 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import  SessionProvider  from "@/components/Provider";
 import { Toaster } from "react-hot-toast"
+import  SessionProvider  from "@/components/Provider";
 
 export const metadata: Metadata = {
   title: {
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         
       <body
           className={cn(
-            "min-h-screen bg-slate-900 font-sans antialiased",
+            "min-h-screen bg-background font-sans antialiased",
             fontSans.variable
           )}
         >
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-                <div className="flex-1">{children}</div>
+                <div className="my-10 flex-1">{children}</div>
               <SiteFooter />
             </div>
             <Toaster />
