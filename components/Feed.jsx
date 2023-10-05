@@ -69,11 +69,10 @@ const Feed = () => {
 
     return () => {
       if (scrollRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         scrollRef.current.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  }, [handleScroll]);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
