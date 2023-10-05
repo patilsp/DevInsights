@@ -10,10 +10,9 @@ import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeToggle } from "@/components/mode-toggle"
 import { buttonVariants } from "@/registry/new-york/ui/button"
-import  Nav  from "@/components/Nav"
 import { motion } from "framer-motion"
 import { FiBell } from 'react-icons/fi'
-
+import  Nav  from "@/components/Nav"
 import Lottie from "lottie-react"
 import animationData from "app/assets/logo.json"
 import { Button } from "@/components/ui/button"

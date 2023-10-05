@@ -140,15 +140,15 @@ const Feed = () => {
       )}
 
       {isLoading && 
-      <div className="flex h-screen items-center justify-center">
-      <Image
-        src='assets/icons/loader.svg'
-        width={100}
-        height={100}
-        alt='loader'
-        className='object-contain'
-      />
-    </div>}
+       <div className='flex justify-center items-center w-full h-full'>
+        <Image
+          src='assets/icons/loader.svg'
+          width={50}
+          height={50}
+          alt='loader'
+          className='object-contain'
+        />
+      </div>}
 
     </section>
   );

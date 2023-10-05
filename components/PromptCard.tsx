@@ -29,8 +29,13 @@
 
     return (
       
-
 <div className="prompt_layout relative flex flex-row justify-center overflow-hidden">
+  
+<motion.div
+                initial={{ opacity: 0, y: 50 }}    // Initial animation properties
+                animate={{ opacity: 1, y: 0 }}     // Animation properties when element enters
+                transition={{ duration: 1, delay: 0.5 }} // Animation duration with a delay
+              >
   <div className="mx-auto w-full p-2">
     <div className="mx-auto flex max-w-sm items-start gap-6 lg:max-w-none">
                    
@@ -102,7 +107,7 @@
                                 <time dateTime="2020-03-16" className="text-xs text-gray-400">Mar 16, 2023</time>
                                 <p className="text-xs text-gray-400"> 5min Read</p>
                                   <p
-                                  className='font-inter cursor-pointer rounded-sm border border-slate-700 bg-slate-700 px-1 pb-1 pt-0 text-xs'
+                                  className='font-inter cursor-pointer rounded-sm border border-slate-900 bg-slate-700 px-1 text-xs'
                                   onClick={() => handleTagClick && handleTagClick(post.tag)}
                                 >
                                  {post.tag}
@@ -159,9 +164,9 @@
               
 
           </div>
+      
+      </motion.div>
       </div>
-
-
     );
   };
 

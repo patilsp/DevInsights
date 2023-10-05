@@ -1,21 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/new-york/ui/avatar";
-import { Button } from "@/registry/new-york/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger } from "@/registry/new-york/ui/dropdown-menu";
 
-import Lottie from "lottie-react";
-import animationData from "app/assets/logo.json";
+import { useRouter } from 'next/navigation';
 
 const Nav = () => {
     const { data: session } = useSession();
-    const [providers, setProviders] = useState(null);
-    const [toggleDropdown, setToggleDropdown] = useState(false);
+    const router = useRouter();
+
+    const [providers, setProviders] = React.useState(null);
+    const [toggleDropdown, setToggleDropdown] = React.useState(false);
 
     useEffect(() => {
         (async () => {
@@ -24,9 +22,12 @@ const Nav = () => {
         })();
     }, []);
 
-    if (!session?.user) {
-        return null;
-    }
+    // Check if the session exists and if not, redirect to the authentication page
+    useEffect(() => {
+        if (!session?.user) {
+            router.push("/authentication");
+        }
+    }, [session, router]);
 
     return (
         <nav className="flex-between mr-1 w-full">
@@ -78,29 +79,13 @@ const Nav = () => {
                             onClick={() => {
                                 signOut();
                             }}
-                            className="block w-full p-2 text-left text-sm hover:bg-slate-800"
+                            className="block w-full p-2 text-left text-sm hover:bg-slate-800 rounded-sm"
                         >
                             Sign Out
                         </button>
                     </DropdownMenuContent>
                 </DropdownMenu>
-            ) : (
-                <>
-                    {providers &&
-                        Object.values(providers).map((provider) => (
-                            <button
-                                type="button"
-                                key={provider.name}
-                                onClick={() => {
-                                    signIn(provider.id);
-                                }}
-                                className="black_btn"
-                            >
-                                Sign in
-                            </button>
-                        ))}
-                </>
-            )}
+            ) : null}
         </nav>
     );
 };

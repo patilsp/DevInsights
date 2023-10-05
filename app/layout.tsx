@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "Next.js blog",
+    "React blog",
+    "Tailwind CSS blog",
+    "Developer blog",
+    "Radix UI",
+  ],
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },

@@ -347,13 +347,12 @@ h1{
 
 .glassIcon{
   color: #fff;
-  /* width: 50px; */
-  /* height: 50px; */
   margin: 5px;
   padding: 5px;
   font-size: 20px;
   overflow: hidden;
   border-radius: 8px;
+  cursor: pointer;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   /* background: rgba(255, 255, 255 , 0.5); */
