@@ -66,9 +66,9 @@ export default async function Welcome() {
         className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+          <h1 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Features
-          </h2>
+          </h1>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
             This project is an experiment to see how a modern app, with features
             like auth, subscriptions, API routes, and static pages would work in
@@ -166,9 +166,9 @@ export default async function Welcome() {
       </section>
       <section id="open-source" className="container py-8 md:py-12 lg:py-24">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+          <h1 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Proudly Open Source
-          </h2>
+          </h1>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
               Dev Insights is committed to open-source principles. Our code is available on{" "}
             <Link
