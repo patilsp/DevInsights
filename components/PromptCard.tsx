@@ -7,7 +7,7 @@
   import { usePathname, useRouter } from "next/navigation";
   import { motion } from "framer-motion";
   import { FiHeart, FiMessageSquare, FiShare, FiMoreVertical } from 'react-icons/fi';
-  import { Button } from "@/components/ui/button"
+  import  Button  from "@/components/share-button";
 
   const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const { data: session } = useSession();
@@ -87,7 +87,7 @@
                                 </div> */}
                               </div> 
                               <div className="relative inline-flex">
-                                  <div className="absolute inset-0 z-10 m-auto rounded-full bg-indigo-400 blur-3xl" aria-hidden="true"></div>
+                                  <div className="absolute inset-0 z-10 m-auto h-6 w-6 rounded-full bg-indigo-400 blur-3xl" aria-hidden="true"></div>
                                   <div className='my-4'>  
                                       <Image
                                         src={post.imagePath}
