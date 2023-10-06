@@ -50,9 +50,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const handleSignIn = async (providerId) => {
     const result = await signIn(providerId, { callbackUrl: '/user-dashboard' });
   
-    if (!result.error) {
-      router.push('/user-dashboard');
-    }
   };
   
 
@@ -88,7 +85,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           <span className="w-full border-t" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
+          <span className="bg-white rounded-sm px-2 text-muted-foreground">
             Or continue with
           </span>
         </div>

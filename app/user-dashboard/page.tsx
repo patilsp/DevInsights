@@ -20,19 +20,14 @@ import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
 import { playlists } from "./data/playlists"
 import Feeds from "@/components/Feed"
 
-export const metadata: Metadata = {
-  title: "DevInsights",
-  description: "developers posts",
-}
-
-export default function MusicPage() {
+export default function Page() {
   return (
     <>
      
       <div className="block">
         {/* <Menu /> */}
-        <div className="">
           <div className="bg-main">
+
             <div className="grid lg:grid-cols-5">
               <Sidebar playlists={playlists} className="hidden lg:block" />
               <div className="col-span-3 lg:col-span-4">
@@ -50,7 +45,6 @@ export default function MusicPage() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </>
   )

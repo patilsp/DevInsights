@@ -8,7 +8,7 @@ import { buttonVariants } from "@/registry/new-york/ui/button"
 import { UserAuthForm } from "./components/user-auth-form"
 import { motion } from "framer-motion";
 import Lottie from"lottie-react";
-import animationData from "@/assets/login.json";
+import animationData from "@/assets/men.json";
 
 export default function Page() {
   return (
@@ -33,11 +33,11 @@ export default function Page() {
         
         
         <div className="relative p-2">
-            <motion.div
-                initial={{ opacity: 0, y: 50 }}    // Initial animation properties
-                animate={{ opacity: 1, y: 0 }}     // Animation properties when element enters
-                transition={{ duration: 1, delay: 1 }} // Animation duration with a delay
-              >
+        <motion.div
+            initial={{ opacity: 0, y: 50 }} 
+            animate={{ opacity: 1, y: 0 }}    
+            transition={{ duration: 1, delay: 1 }} 
+          >
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[375px]">
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="text-2xl font-semibold tracking-tight">
