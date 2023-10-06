@@ -36,42 +36,21 @@ export function Sidebar({ className, playlists }: SidebarProps) {
               My Feeds
             </Button>
             <Button variant="ghost" className="w-full justify-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mr-2 h-4 w-4"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-                <path d="M12 2v14l4-4-4-4z" />
-              </svg>
+            <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4"><path d="M15.138 5.624l-.873-1.054-.576-.717a2.24 2.24 0 00-3.592.099l-.15.223c-.667 1.057-.972 1.94-.942 3.219l.009.215-.028-.01c-.745-.235-1.706.106-2.467.878-2.278 2.315-2.659 5.847-.988 8.78 1.273 2.267 3.82 3.741 6.456 3.741.113 0 .227-.002.343-.008 2.72-.134 5.302-1.86 6.466-4.321a7.182 7.182 0 00.586-4.389c-.337-1.805-1.209-2.923-2.868-4.992l-.532-.652-.844-1.012zm-2.654-.82l.6.745.876 1.058.834.999.523.641c1.27 1.585 2.243 2.633 2.557 4.315a5.655 5.655 0 01-.465 3.451c-.922 1.95-3 3.339-5.154 3.445-.09.004-.18.006-.268.006-2.083 0-4.118-1.176-5.123-2.967-1.338-2.348-1.037-5.129.748-6.943.638-.648.975-.64 1.013.023l.003.132.001.566.009.574.013.381.022.376c.102 1.426.44 2.665 1.557 2.852.682.114 1.407-.064 1.853-.818.295-.509.353-1.11.163-1.69l-.073-.193-.09-.195-.115-.236-.218-.431-.275-.522-.33-.614c-.775-1.43-.908-3.343.206-4.925a.707.707 0 011.133-.03z" fill="currentcolor" fill-rule="evenodd"></path></svg>
               Popular
             </Button>
 
             <Button variant="ghost" className="w-full justify-start">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2 h-4 w-4"
-            >
-              <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
-              <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
-              <circle cx="12" cy="12" r="2" />
-              <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
-              <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
-            </svg>
+            <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4"><path d="M15.874 3H8.126a3.357 3.357 0 00-3.35 3.152l-.772 12.77c-.028.459.106.915.38 1.286l.101.125c.666.764 1.818.9 2.647.287L12 17.023l4.868 3.597a1.964 1.964 0 003.128-1.7l-.771-12.767A3.358 3.358 0 0015.874 3zm0 1.5c.981 0 1.794.764 1.854 1.744l.771 12.768a.464.464 0 01-.74.402l-5.207-3.848a.929.929 0 00-1.104 0L6.24 19.414a.464.464 0 01-.74-.402l.773-12.768c.06-.98.872-1.744 1.853-1.744h7.748z" fill="currentcolor" fill-rule="evenodd"></path></svg>
               Bookmarks
             </Button>
+            <Button variant="ghost" className="w-full justify-start">
+            <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4"><path d="M9.456 4.216l-5.985 7.851c-.456.637-.583 1.402-.371 2.108l.052.155a2.384 2.384 0 002.916 1.443l2.876-.864.578 4.042a2.384 2.384 0 002.36 2.047h.234l.161-.006a2.384 2.384 0 002.2-2.041l.576-4.042 2.877.864a2.384 2.384 0 002.625-3.668L14.63 4.33a3.268 3.268 0 00-5.174-.115zm3.57.613c.16.114.298.253.411.411l5.897 7.736a.884.884 0 01-.973 1.36l-3.563-1.069a.884.884 0 00-1.129.722l-.678 4.75a.884.884 0 01-.875.759h-.234a.884.884 0 01-.875-.76l-.679-4.75a.884.884 0 00-1.128-.72l-3.563 1.068a.884.884 0 01-.973-1.36L10.56 5.24a1.767 1.767 0 012.465-.41z" fill="currentcolor" fill-rule="evenodd"></path></svg>
+              Most upvoted
+            </Button>
           </div>
+         
+        
         </div>
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">

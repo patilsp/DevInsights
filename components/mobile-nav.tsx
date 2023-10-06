@@ -35,7 +35,7 @@ export function MobileNav() {
         </label>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="pr-0">
+      <SheetContent side="left" className="pr-0 bg-main">
    
 
         <MobileLink href='/' className='flex justify-start items-center gap-2'>

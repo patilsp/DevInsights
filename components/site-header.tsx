@@ -40,14 +40,14 @@ import {
 export function SiteHeader() {
   
    return (
-    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full shadow border-b-slate-900 backdrop-blur">
       <div className="flex h-14 items-center px-2">
         <MobileNav />
         <Link href='/' className='flex-center flex gap-2'>
             <div style={{ width: '40px', height: '40px' }}>
               <Lottie animationData={animationData} />
             </div>
-            <p className='logo_text animate mr-2 text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
+            <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
         </Link>
 
         
@@ -79,7 +79,7 @@ export function SiteHeader() {
                   <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
                     <BellIcon className="mt-px h-5 w-5" />
                     <div className="space-y-1">
-                      <p className="text-sm font-medium leading-none">Everything</p>
+                      <p className="text-sm font-medium ">Everything</p>
                       <p className="text-sm text-muted-foreground">
                         Email digest, mentions & all activity.
                       </p>
@@ -88,7 +88,7 @@ export function SiteHeader() {
                   <div className="-mx-2 flex items-start space-x-4 rounded-md bg-accent p-2 text-accent-foreground transition-all">
                     <PersonIcon className="mt-px h-5 w-5" />
                     <div className="space-y-1">
-                      <p className="text-sm font-medium leading-none">Available</p>
+                      <p className="text-sm font-medium ">Available</p>
                       <p className="text-sm text-muted-foreground">
                         Only mentions and comments.
                       </p>
@@ -97,7 +97,7 @@ export function SiteHeader() {
                   <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
                     <EyeNoneIcon className="mt-px h-5 w-5" />
                     <div className="space-y-1">
-                      <p className="text-sm font-medium leading-none">Ignoring</p>
+                      <p className="text-sm font-medium ">Ignoring</p>
                       <p className="text-sm text-muted-foreground">
                         Turn off all notifications.
                       </p>

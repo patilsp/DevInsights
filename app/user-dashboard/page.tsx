@@ -32,7 +32,7 @@ export default function MusicPage() {
       <div className="block">
         {/* <Menu /> */}
         <div className="">
-          <div className="bg-background">
+          <div className="bg-main">
             <div className="grid lg:grid-cols-5">
               <Sidebar playlists={playlists} className="hidden lg:block" />
               <div className="col-span-3 lg:col-span-4">

@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const Loading = () => {
   return (
-    <div className='flex justify-center items-center w-full h-full'>
+    <div className='absolute inset-0 flex items-center justify-center'>
       <Image
-        src='assets/icons/loader.svg'
-        width={50}
-        height={50}
+        src='/assets/icons/loader.svg' // Use an absolute path to your loader image
+        width={120}
+        height={120}
         alt='loader'
         className='object-contain'
       />
@@ -15,4 +15,6 @@ const Loading = () => {
 };
 
 export default Loading;
+
+
 

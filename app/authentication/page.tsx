@@ -17,7 +17,7 @@ export default function Page() {
       <div className="relative h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 mb-10">
         
         <div className="relative flex-col p-4 text-white lg:flex">
-          <div className="absolute inset-0  bg-background/95" />
+          <div className="absolute inset-0 " />
           <motion.div
             initial={{ opacity: 0, x: -100 }} // Initial animation properties
             animate={{ opacity: 1, x: 0 }}     // Animation properties when element enters

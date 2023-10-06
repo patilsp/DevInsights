@@ -38,11 +38,11 @@ const Nav = () => {
                             <Image src={session?.user.image} width={32} height={32} className="rounded-full" alt="profile" onClick={() => setToggleDropdown(!toggleDropdown)} />
                         </div>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56" align="end" forceMount>
+                    <DropdownMenuContent className="w-100" align="end" forceMount>
                         <DropdownMenuLabel className="font-normal">
                             <div className="flex flex-col space-y-1">
-                                <p className="text-sm font-medium leading-none">{session?.user.name}</p>
-                                <p className="text-xs leading-none text-muted-foreground">{session?.user.email}</p>
+                                <p className="text-sm font-medium ">{session?.user.name}</p>
+                                <p className="text-xs  text-muted-foreground">{session?.user.email}</p>
                             </div>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />

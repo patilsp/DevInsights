@@ -25,8 +25,9 @@ export const metadata: Metadata = {
     "Radix UI",
   ],
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    
   ],
   icons: {
     icon: "/favicon.ico",
@@ -53,7 +54,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="darkTheme"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >

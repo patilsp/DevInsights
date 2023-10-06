@@ -63,7 +63,7 @@ export function CommandMenu({ ...props }: DialogProps) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog className="bg-main" open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -84,7 +84,7 @@ export function CommandMenu({ ...props }: DialogProps) {
               ))}
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Theme">
+          {/* <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
               <SunIcon className="mr-2 h-4 w-4" />
               Light
@@ -97,7 +97,7 @@ export function CommandMenu({ ...props }: DialogProps) {
               <LaptopIcon className="mr-2 h-4 w-4" />
               System
             </CommandItem>
-          </CommandGroup>
+          </CommandGroup> */}
         </CommandList>
       </CommandDialog>
     </>

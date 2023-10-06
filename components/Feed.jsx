@@ -109,7 +109,7 @@ const Feed = () => {
       <form className="flex-center relative w-full">
         <div className="flex w-full items-center justify-between bg-gray-900 p-4 text-white">
           <div className="flex items-center">
-            <h1 className="sm:text-1xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 ">My Feeds <span className="font-normal">⌘</span></h1>
+            <h2 className="orange_gradient sm:text-1xl font-extrabold tracking-tight">My Feeds <span className="font-normal">⌘</span></h2>
           </div>
           <div className="flex items-center space-x-4">
             
@@ -140,7 +140,7 @@ const Feed = () => {
       )}
 
       {isLoading && 
-       <div className='flex justify-center items-center w-full h-full'>
+       <div className='relative flex justify-center items-center w-full h-full'>
         <Image
           src='assets/icons/loader.svg'
           width={50}

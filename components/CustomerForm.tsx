@@ -28,7 +28,7 @@ const CustomerForm = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className='flex-center mb-5 w-full max-w-full flex-col'>
       <h1 className='head_text text-center'>
-        <span className='fs-36 green_gradient'>{type} Customer</span>
+        <span className='fs-36 orange_gradient'>{type} Customer</span>
       </h1>
       {/* <p className='desc max-w-md text-center'>
         {type} and share amazing prompts with the world, and let your
