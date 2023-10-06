@@ -13,6 +13,10 @@ export const docsConfig: DocsConfig = {
       href: "/",
     },
     {
+      title: "My Feeds",
+      href: "/",
+    },
+    {
       title: "Dashboard",
       href: "/dashboard",
     },
@@ -37,11 +41,9 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Sign Up",
-          href: "/sign-up",
+          href: "/authentication",
         },
-        // ... other sidebarNav sub-items ...
       ],
     },
-    // ... other sidebarNav items ...
   ],
 };

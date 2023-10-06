@@ -53,7 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="darkTheme"
             enableSystem
             disableTransitionOnChange
           >
