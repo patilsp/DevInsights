@@ -559,12 +559,12 @@ h1 {
 
 .sidebar{
     position: fixed;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     /* background: rgb(255, 100, 100); */
     padding: 0px;
-    width: 18%;
+    width: 20%;
     height: 1000px;
-    margin-bottom: 50px;
+    /* bottom: 50px; */
 }
 .bg2{
   background: rgb(255, 100, 100) !important ;
