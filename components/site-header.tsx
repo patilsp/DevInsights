@@ -44,12 +44,11 @@ export function SiteHeader() {
       <div className="flex h-14 items-center px-2">
         <MobileNav />
         <Link href='/' className='flex-center flex gap-2'>
-            <div style={{ width: '40px', height: '40px' }}>
+            {/* <div style={{ width: '40px', height: '40px' }}>
               <Lottie animationData={animationData} />
-            </div>
+            </div> */}
             <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
         </Link>
-
         
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
@@ -63,7 +62,7 @@ export function SiteHeader() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button variant="ghost" className="btn mr-2 mt-1">                
+                <button variant="ghost" className="border p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
                   <FiBell size={24}  />
                 </button>
               </DropdownMenuTrigger>      

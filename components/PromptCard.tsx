@@ -32,18 +32,18 @@
 <div className="prompt_layout relative flex flex-row justify-center overflow-hidden">
   
 <motion.div
-                initial={{ opacity: 0, y: 50 }}    // Initial animation properties
-                animate={{ opacity: 1, y: 0 }}     // Animation properties when element enters
-                transition={{ duration: 1, delay: 0.5 }} // Animation duration with a delay
-              >
+    initial={{ opacity: 0, y: 50 }}   
+    animate={{ opacity: 1, y: 0 }}   
+    transition={{ duration: 1, delay: 0.5 }} 
+  >
   <div className="mx-auto w-full p-2">
     <div className="mx-auto flex max-w-sm items-start gap-6 lg:max-w-none">
                    
-                  <div className="relative h-full overflow-hidden rounded-3xl bg-slate-800 p-px shadow before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-main before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-indigo-700 after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-10 before:group-hover:opacity-100 border hover:border-white">
+                  <div className="relative h-full overflow-hidden rounded-3xl p-px shadow before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-main before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-indigo-700 after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-10 before:group-hover:opacity-100 border hover:border-white">
                       <div className="relative z-20 h-full overflow-hidden rounded-[inherit]    p-4 ">
                         
                           <div className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/2 -translate-x-1/2 translate-y-1/2" aria-hidden="true">
-                              <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[80px]"></div>
+                              <div className="translate-z-0 absolute inset-0 rounded-full blur-[80px]"></div>
                           </div>
                           <div className="flex h-full flex-col">
                           <div className='flex items-start justify-between gap-5'>
