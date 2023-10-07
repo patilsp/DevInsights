@@ -6,23 +6,23 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import Form from "@/components/Form";
 
-const CreatePrompt = () => {
+const createPost = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ title: "", prompt: "", tag: "", imagePath: "", link: "", createdDate:""});
+  const [post, setPost] = useState({ title: "", description: "", tag: "", imagePath: "", link: "", createdDate:""});
 
-  const createPrompt = async (e) => {
+  const createPost = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/prompt/new", {
+      const response = await fetch("/api/post/new", {
         method: "POST",
         body: JSON.stringify({
           title: post.title,
-          prompt: post.prompt,
+          description: post.description,
           userId: session?.user.id,
           tag: post.tag,
           imagePath: post.imagePath,
@@ -33,7 +33,7 @@ const CreatePrompt = () => {
 
       if (response.ok) {
         toast.success("Post has been created! 🔥");
-        router.push("/");
+        router.push("/user-dashboard");
       }
     } catch (error) {
       toast.error(error);
@@ -48,9 +48,9 @@ const CreatePrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={createPrompt}
+      handleSubmit={createPost}
     />
   );
 };
 
-export default CreatePrompt;
+export default createPost;

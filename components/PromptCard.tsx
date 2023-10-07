@@ -118,7 +118,7 @@
                                 <h2 className=" mb-1 font-bold text-slate-200 hover:text-indigo-600">{post.title}</h2>
                               </Link>
                                 
-                                  <div className="mt-4 text-sm text-slate-400 dark:text-slate-300"><p>{post.prompt}</p></div>
+                                  <div className="mt-4 text-sm text-slate-400 dark:text-slate-300"><p>{post.description}</p></div>
                               </div>
                               <div className="border-t"></div>
                             
@@ -126,6 +126,7 @@
 
                               <div className="flex justify-between gap-5">
                                 <Button text="5" icon={<FiHeart className="mr-2 border-none fill-slate-500" />} />
+                                
                                 <Button
                                   text="10"
                                   icon={<FiMessageSquare className="mr-2 fill-slate-500" />}

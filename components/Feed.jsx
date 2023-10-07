@@ -43,7 +43,7 @@ const Feed = () => {
 
   const fetchPosts = async () => {
     setIsLoading(true);
-    const response = await fetch("/api/prompt");
+    const response = await fetch("/api/post");
     const data = await response.json();
 
     setAllPosts((prevPosts) => [...prevPosts, ...data]);
@@ -80,7 +80,7 @@ const Feed = () => {
       (item) =>
         regex.test(item.creator.username) ||
         regex.test(item.tag) ||
-        regex.test(item.prompt)
+        regex.test(item.description)
     );
   };
 

@@ -5,51 +5,53 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@/components/Form";
 
-const UpdatePrompt = () => {
+const updatePost = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const promptId = searchParams.get("id");
+  const postId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "", imagePath: "", link: "", title: ""});
+  const [post, setPost] = useState({ title: "", description: "", tag: "", imagePath: "", link: "", createdDate: "" });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const getPromptDetails = async () => {
-      const response = await fetch(`/api/prompt/${promptId}`);
+    const getPostDetails = async () => {
+      const response = await fetch(`/api/post/${postId}`);
       const data = await response.json();
 
       setPost({
-        prompt: data.prompt,
+        description: data.description,
         tag: data.tag,
         imagePath: data.imagePath,
         link: data.link,
-        title: data.title
+        title: data.title,
+        createdDate: data.createdDate
       });
     };
 
-    if (promptId) getPromptDetails();
-  }, [promptId]);
+    if (postId) getPostDetails();
+  }, [postId]);
 
-  const updatePrompt = async (e) => {
+  const updatePost = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!promptId) return alert("Missing PromptId!");
+    if (!postId) return alert("Missing postId!");
 
     try {
-      const response = await fetch(`/api/prompt/${promptId}`, {
+      const response = await fetch(`/api/post/${postId}`, {
         method: "PATCH",
         body: JSON.stringify({
-          prompt: post.prompt,
+          description: post.description,
           tag: post.tag,
           imagePath:post.imagePath,
           link:post.link,
           title:post.title,
+          createdDate:post.createdDate
         }),
       });
 
       if (response.ok) {
-        router.push("/");
+        router.push("/user-dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -64,9 +66,9 @@ const UpdatePrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={updatePrompt}
+      handleSubmit={updatePost}
     />
   );
 };
 
-export default UpdatePrompt;
+export default updatePost;

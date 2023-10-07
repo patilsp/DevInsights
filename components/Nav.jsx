@@ -47,7 +47,7 @@ const Nav = () => {
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <Link href="/create-prompt">
+                            <Link href="/create-post">
                                 <DropdownMenuItem>
                                     Create Post
                                     <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>

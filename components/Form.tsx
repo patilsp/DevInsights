@@ -17,20 +17,19 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
   return (
     <section className='flex-center mb-5 w-full max-w-full flex-col'>
       <h1 className='head_text text-center'>
-        <span className='fs-36 orange_gradient'>{type} Post</span>
+        <span className='fs-36 green_gradient'>{type} Post</span>
       </h1>
-      {/* <p className='desc text-center max-w-md'>
-        {type} and share amazing prompts with the world, and let your
-        imagination run wild with any AI-powered platform
+      <p className='desc text-center max-w-md'>
+        {type} and share amazing posts with the world.
       </p>
-      */}
+     
       <form
         onSubmit={handleSubmit}
         className='bg-slat-900 mt-10 flex w-full max-w-2xl flex-col gap-7 rounded-xl border p-4 text-card-foreground shadow'
       >
 
-          <label>
-            <span className=''>
+          <label>             
+            <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
               Post Title
             </span>
             <Input
@@ -51,8 +50,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           </span>
 
           <Textarea
-            value={post.prompt}
-            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
+            value={post.description}
+            onChange={(e) => setPost({ ...post, description: e.target.value })}
             placeholder='Write your post here'
             required
             className='form_textarea'
@@ -60,21 +59,6 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           />
         </label>
 
-        {/* <label>
-          <select
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            required
-            className='form_input border'
-          >
-            <option value=''>Select a category</option>
-            <option value='aitool'>AI Tool</option>
-            <option value='programming'>Programming Language</option>
-            <option value='Database'>Database</option>
-            <option value='other'>Other</option>
-        
-          </select>
-        </label> */}
 
         <div className="grid gap-2">
             <Label htmlFor="area">Post Category</Label>
@@ -175,7 +159,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
           <Button
             type='submit'
             disabled={submitting}
-            className='inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+            className='btn-primary'
           >
             {submitting ? `${type}ing...` : type}
           </Button>

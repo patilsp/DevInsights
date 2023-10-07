@@ -47,10 +47,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
  
   
-  const handleSignIn = async (providerId) => {
-    const result = await signIn(providerId, { callbackUrl: '/user-dashboard' });
+  // const handleSignIn = async (providerId) => {
+  //   const result = await signIn(providerId, { callbackUrl: '/user-dashboard' });
   
-  };
+  // };
   
 
 
