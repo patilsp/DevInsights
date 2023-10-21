@@ -95,7 +95,7 @@
                                   <div className="absolute inset-0 z-10 m-auto h-6 w-6 rounded-full bg-indigo-400 blur-3xl" aria-hidden="true"></div>
                                   <div className='my-4'>  
                                       <Image
-                                        src={post.imagePath}
+                                        src={post?.imagePath}
                                         alt='post_image'
                                         width={500} 
                                         height={300}

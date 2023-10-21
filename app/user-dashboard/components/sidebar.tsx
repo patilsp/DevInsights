@@ -11,7 +11,7 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Sidebar({ className, playlists }: SidebarProps) {
   return (
     <div className={cn("pb-12", className)}>
-        <ScrollArea className="h-[1000px]">
+        <ScrollArea className="h-[1000px] mb-2">
           <div className="space-y-4 py-4 sidebar">
             <div className="px-3 py-2">
               <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
