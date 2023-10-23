@@ -35,7 +35,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/registry/new-york/ui/card"
-
+import Image from 'next/image'
 
 export function SiteHeader() {
   
@@ -44,10 +44,14 @@ export function SiteHeader() {
       <div className="flex h-14 items-center px-2">
         <MobileNav />
         <Link href='/' className='flex-center flex gap-2'>
-            {/* <div style={{ width: '40px', height: '40px' }}>
-              <Lottie animationData={animationData} />
-            </div> */}
-            <p className='logo_text animate mr-2 text-center font-extrabold  tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
+            {/* <Image 
+              src="/images/logo.png"
+              className=""
+              width={60}
+              height={60}
+
+              /> */}
+            <p className='mr-2 text-center font-extrabold  tracking-tight text-white'>TechInsights</p>
         </Link>
         
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
