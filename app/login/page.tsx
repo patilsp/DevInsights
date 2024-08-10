@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       
-      <div className="relative h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 mb-10">
+      <div className="relative h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 mb-10 ">
         
         <div className="relative flex-col p-4 text-white lg:flex">
           <div className="absolute inset-0 " />
@@ -38,7 +38,7 @@ export default function Page() {
             animate={{ opacity: 1, y: 0 }}    
             transition={{ duration: 1, delay: 1 }} 
           >
-          <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[375px]">
+          <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[375px] mb-28 md:mb-0">
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="text-2xl  tracking-tight">
                 Create an account

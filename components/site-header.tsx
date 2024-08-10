@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { CommandMenu } from "@/components/command-menu"
 import { Icons } from "@/components/icons"
@@ -20,11 +19,6 @@ import { BellIcon, EyeNoneIcon, PersonIcon } from "@radix-ui/react-icons"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
@@ -35,84 +29,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/registry/new-york/ui/card"
-import Image from 'next/image'
+import Image from "next/image"
 
 export function SiteHeader() {
   
    return (
     <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full shadow border-b-slate-900 backdrop-blur">
       <div className="flex h-14 items-center px-2">
-        <MobileNav />
-        <Link href='/' className='flex-center flex gap-2'>
-            {/* <Image 
-              src="/images/logo.png"
-              className=""
+        {/* <MobileNav /> */}
+        <Link href='/' className='flex-center gap-2 hidden md:flex'>
+            <Image 
+              src="/images/logo.svg"
+              className="obtain-image mr-2"
               width={60}
               height={60}
-
-              /> */}
-            <p className='mr-2 text-center font-extrabold  tracking-tight text-white'>TechInsights</p>
+              />
         </Link>
         
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />
           </div>
-          <nav className="flex items-center">
-              {/* <ModeToggle /> */}
-
-              <div className="w-full flex-1 md:w-auto md:flex-none">
-            
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button variant="ghost" className="border p-1 rounded-md border-input bg-transparent shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
-                  <FiBell size={24}  />
-                </button>
-              </DropdownMenuTrigger>      
-              <DropdownMenuContent className="w-100 p-4" align="end" forceMount>
-              <Card className="border-none">
-                <CardHeader className="pb-3">
-                  <CardTitle>Notifications</CardTitle>
-                  <CardDescription>
-                    Choose what you want to be notified about.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-1">
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-                    <BellIcon className="mt-px h-5 w-5" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium ">Everything</p>
-                      <p className="text-sm text-muted-foreground">
-                        Email digest, mentions & all activity.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md bg-accent p-2 text-accent-foreground transition-all">
-                    <PersonIcon className="mt-px h-5 w-5" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium ">Available</p>
-                      <p className="text-sm text-muted-foreground">
-                        Only mentions and comments.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-                    <EyeNoneIcon className="mt-px h-5 w-5" />
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium ">Ignoring</p>
-                      <p className="text-sm text-muted-foreground">
-                        Turn off all notifications.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-          </Card>
-        </DropdownMenuContent>
-      </DropdownMenu>
-      
-            
-          </div>
+          <ModeToggle />
+          <nav className="hidden">           
               <Nav />         
           </nav>
         </div>

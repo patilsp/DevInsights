@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <div className="flex flex-col justify-center">       
       <h1 className="mx-auto text-center mt-4">Not Found</h1>     
-      <p className="mx-auto my-4 max-w-3xl text-center text-lg text-white"> Could not find requested resource </p>
+      <p className="mx-auto my-4 max-w-3xl text-center text-lg"> Could not find requested resource </p>
 
 
        <div className='flex w-full h-full justify-center'>

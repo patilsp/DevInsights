@@ -1,5 +1,5 @@
 {
-  "name": "devinsights",
+  "name": "techinsights",
   "version": "0.0.2",
   "private": true,
   "scripts": {
@@ -55,8 +55,8 @@
     "react-icons": "^4.9.0",
     "recharts": "^2.7.3",
     "sharp": "^0.31.3",
-    "tailwind-merge": "^1.12.0",
-    "tailwindcss-animate": "^1.0.5",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^5.7.1",
     "zod": "^3.22.2"
   },

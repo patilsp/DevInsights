@@ -14,15 +14,24 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "My Feeds",
+      href: "/user-dashboard",
+    },
+    {
+      title: "All News",
+      href: "/",
+    },
+   
+     {
+      title: "Top Stories",
       href: "/",
     },
     {
-      title: "Dashboard",
-      href: "/dashboard",
+      title: "Trending",
+      href: "/",
     },
     {
-      title: "Profile",
-      href: "/profile",
+      title: "Bookmarks",
+      href: "/",
     },
    
     
@@ -40,7 +49,7 @@ export const docsConfig: DocsConfig = {
           href: "/forms",
         },
         {
-          title: "Sign Up",
+          title: "Sign In",
           href: "/authentication",
         },
       ],

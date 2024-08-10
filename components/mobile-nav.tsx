@@ -26,9 +26,7 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-         
-          
-        <label for="checkbox" className="toggle">
+        <label htmlFor="checkbox" className="toggle">
             <div className="bars" id="bar1"></div>
             <div className="bars" id="bar2"></div>
             <div className="bars" id="bar3"></div>
@@ -38,11 +36,8 @@ export function MobileNav() {
       <SheetContent side="left" className="pr-0 bg-main">
    
 
-        <MobileLink href='/' className='flex justify-start items-center gap-2'>
-            <div style={{ width: '40px', height: '40px' }}>
-              <Lottie animationData={animationData} />
-            </div>
-            <p className='logo_text animate mr-2 text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white'>DevInsights</p>
+        <MobileLink href='/' className='flex justify-start items-center gap-2'>            
+            <p className='logo_text animate mr-2 text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white'>TechInsights</p>
         </MobileLink>
 
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
@@ -62,8 +57,8 @@ export function MobileNav() {
           </div>
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item, index) => (
-              <div key={index} className="flex flex-col space-y-3 pt-6">
-                <h4 className="font-medium">{item.title}</h4>
+              <div key={index} className="flex flex-col space-y-3 pt-4">
+                {/* <h4 className="font-medium">{item.title}</h4> */}
                 {item?.items?.length &&
                   item.items.map((item) => (
                     <React.Fragment key={item.href}>
@@ -72,7 +67,7 @@ export function MobileNav() {
                           <MobileLink
                             href={item.href}
                             onOpenChange={setOpen}
-                            className="text-muted-foreground"
+                            className=""
                           >
                             {item.title}
                           </MobileLink>

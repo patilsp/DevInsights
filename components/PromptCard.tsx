@@ -22,8 +22,8 @@
     };
 
     const handleCopy = () => {
-      setCopied(post.prompt);
-      navigator.clipboard.writeText(post.prompt);
+      setCopied(post.link);
+      navigator.clipboard.writeText(post.link);
       setTimeout(() => setCopied(false), 3000);
     };
 
@@ -39,15 +39,15 @@
   <div className="mx-auto w-full p-2">
     <div className="mx-auto flex max-w-sm items-start gap-6 lg:max-w-none">
                    
-                  <div className="relative h-full overflow-hidden rounded-3xl p-px shadow before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-main before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-indigo-700 after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-10 before:group-hover:opacity-100 border hover:border-white">
-                      <div className="relative z-20 h-full overflow-hidden rounded-[inherit]    p-4 ">
+                  <div className="relative h-full overflow-hidden rounded shadow before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-main before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-96 after:w-96 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-indigo-700 after:opacity-0 after:blur-[100px] after:transition-opacity after:duration-500 after:hover:opacity-10 before:group-hover:opacity-100 border hover:border-white">
+                      <div className="relative z-20 h-full overflow-hidden rounded-[inherit]    p-4">
                         
                           <div className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/2 -translate-x-1/2 translate-y-1/2" aria-hidden="true">
                               <div className="translate-z-0 absolute inset-0 rounded-full blur-[80px]"></div>
                           </div>
                           <div className="flex h-full flex-col">
                           <div className='flex items-start justify-between gap-5'>
-                                <div
+                                {/* <div
                                   className='flex flex-1 cursor-pointer items-center justify-start gap-1'
                                   onClick={handleProfileClick}
                                 >
@@ -60,36 +60,22 @@
                                   />
 
                                   <div className='flex flex-col'>
-                                    <h3 className='font-semibold text-gray-200'>
+                                    <h3 className=' text-gray-200'>
                                       {post.creator?.username}
                                     </h3>
                                     <p className='font-inter text-sm text-gray-500'>
                                       {post.creator?.email}
                                     </p>
                                   </div>
-                                </div>
+                                </div> */}
 
-                                <Button
+                                {/* <Button
                                   
                                   icon={<FiMoreVertical className="fill-slate-500"  />}
-                                />
+                                /> */}
 
-                                {/* <div>
-                                  <FiMoreVertical className="fill-slate-500 bg-transparent h-5 w-5" />
-                                </div> */}
+                          
 
-                                {/* <div className='copy_btn' onClick={handleCopy}>
-                                  <Image
-                                    src={
-                                      copied === post.prompt
-                                        ? "/assets/icons/tick.svg"
-                                        : "/assets/icons/copy.svg"
-                                    }
-                                    alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
-                                    width={12}
-                                    height={12}
-                                  />
-                                </div> */}
                               </div> 
                               <div className="relative inline-flex">
                                   <div className="absolute inset-0 z-10 m-auto h-6 w-6 rounded-full bg-indigo-400 blur-3xl" aria-hidden="true"></div>
@@ -103,32 +89,35 @@
                                       />
                                     </div>
                               </div>
-                              <div className="flex justify-between gap-5 text-xs">
-                                <time dateTime="2020-03-16" className="text-xs text-gray-400">Mar 16, 2023</time>
-                                <p className="text-xs text-gray-400"> 5min Read</p>
-                                  <p
-                                  className='font-inter cursor-pointer rounded-sm border px-1 text-xs'
-                                  onClick={() => handleTagClick && handleTagClick(post.tag)}
-                                >
-                                 {post.tag}
-                                </p>
-                              </div>
-                              <div className="mb-2 grow">
+                              <div className="flex items-center justify-between gap-5 text-xs">
                               <Link href={post.link}>
-                                <h2 className=" mb-1 font-bold text-slate-200 hover:text-indigo-600">{post.title}</h2>
+                                <h2 className=" mb-1 font-bold text-indigo-500 hover:text-indigo-600">{post.title}</h2>
                               </Link>
+                               
+                              <div className='copy_btn' onClick={handleCopy}>
+                                  <Image
+                                    src={
+                                      copied === post.link
+                                        ? "/assets/icons/tick.svg"
+                                        : "/assets/icons/copy.svg"
+                                    }
+                                    alt={copied === post.link ? "tick_icon" : "copy_icon"}
+                                    width={12}
+                                    height={12}
+                                  />
+                                </div>
+                              </div>
+                              <div className="mb-2">                           
                                 
                                   <div className="mt-4 text-sm text-slate-400 dark:text-slate-300"><p>{post.description}</p></div>
                               </div>
-                              <div className="border-t"></div>
-                            
-                              
+                              <div className="border-t mt-1"></div>
 
-                              <div className="flex justify-between gap-5">
-                                <Button text="5" icon={<FiHeart className="mr-2 border-none fill-slate-500" />} />
+                              <div className="flex justify-between gap-5 p-0">
+                                <Button  icon={<FiHeart className="mr-2 border-none fill-slate-500" />} />
                                 
                                 <Button
-                                  text="10"
+                                  
                                   icon={<FiMessageSquare className="mr-2 fill-slate-500" />}
                                 />
                                 <Button

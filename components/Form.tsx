@@ -15,7 +15,7 @@ import { Label } from "@/registry/new-york/ui/label"
 
 const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUrl }) => {
   return (
-    <section className='flex-center mb-5 w-full max-w-full flex-col'>
+    <section className='flex-center w-full max-w-full flex-col mb-20 md:mb-0'>
       <h1 className='head_text text-center'>
         <span className='fs-36 green_gradient'>{type} Post</span>
       </h1>
@@ -102,20 +102,6 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, imagePath, fileUr
               
             />
           </label>
-
-          {/* <label>
-            <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
-                Pick a date
-            </span>
-
-            <DatePickerWithRange 
-            value={post.createdDate}
-            onChange={(e) => setPost({ ...post, createdDate: e.target.value })}
-            type='date'
-            placeholder='Date'
-            className="[&>button]:w-[260px]" />
-             
-          </label> */}
 
           <label>
             <span className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>

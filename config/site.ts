@@ -11,22 +11,24 @@ export const siteConfig = {
     },
     {
       title: "My Feeds",
-      href: "/",
+      href: "/user-dashboard",
     },
     {
-      title: "My Profile",
-      href: "/profile",
+      title: "All News",
+      href: "/",
     },
    
      {
-      title: "Settings",
-      href: "/forms",
+      title: "Top Stories",
+      href: "/",
+    },
+    {
+      title: "Trending",
+      href: "/",
+    },
+    {
+      title: "Bookmarks",
+      href: "/",
     },
   ],
-  links: {
-    twitter: "https://twitter.com/patilsp",
-    github: "https://github.com/patilsp",
-    docs: "#",
-    portfolio: "https://portfolio-santosh-patil.vercel.app/",
-  },
 }
