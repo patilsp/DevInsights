@@ -1,6 +1,5 @@
 "use client";
-// import Feed from "@/components/feed";
-import TechnologyNews from "@/components/technology-news";
+import Feed from "@/components/feed";
 import { motion } from "framer-motion"
 
 const Home = () => (
@@ -10,7 +9,7 @@ const Home = () => (
     transition={{ ease: "easeOut" }}
   >
   <section className='flex-center w-full flex-col mb-20 md:mb-0'>
-    <TechnologyNews />
+    <Feed />
   </section>
   </motion.div>
 );
