@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "DevInsights",
+  name: "Tech Insights",
   description:
-    "DevInsights is the leading provider of technology news and insights for developers, technologists, and innovators.",
+    "Tech Insights is the leading provider of technology news and insights for developers, technologists, and innovators.",
   mainNav: [
     {
       title: "Home",
