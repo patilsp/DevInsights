@@ -7,7 +7,7 @@ import animationData from "@/assets/not-found.json"
 export default function NotFound() {
   return (
     <div className="flex flex-col justify-center">       
-      <h1 className="mx-auto text-center mt-4">Not Found</h1>     
+      <h1 className="mx-auto text-center text-red-400 mt-10">Not Found</h1>     
       <p className="mx-auto my-4 max-w-3xl text-center text-lg"> Could not find requested resource </p>
 
 

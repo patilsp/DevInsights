@@ -1,5 +1,5 @@
 "use client";
-import Feed from "@/components/feed";
+import Welcome from "@/components/Welcome";
 import { motion } from "framer-motion"
 
 const Home = () => (
@@ -9,9 +9,10 @@ const Home = () => (
     transition={{ ease: "easeOut" }}
   >
   <section className='flex-center w-full flex-col mb-20 md:mb-0'>
-    <Feed />
+    <Welcome />
   </section>
   </motion.div>
 );
+
 
 export default Home;

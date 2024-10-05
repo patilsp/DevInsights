@@ -1,16 +1,48 @@
-"use client";
+"use client"
 
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import PromptCard from "./PromptCard";
+import { useState, useEffect, useRef, useCallback } from "react"
+import { motion } from "framer-motion"
+import { Search } from "lucide-react"
+import { Input } from "@/registry/new-york/ui/input"
+import { Button } from "@/registry/new-york/ui/button"
+import { ScrollArea } from "@/registry/new-york/ui/scroll-area"
 
-const PromptCardList = ({ data, handleTagClick }) => {
+interface Post {
+  _id: string
+  creator: {
+    username: string
+  }
+  tag: string
+  description: string
+}
+
+interface PromptCardProps {
+  post: Post
+  handleTagClick: (tag: string) => void
+}
+
+const PromptCard: React.FC<PromptCardProps> = ({ post, handleTagClick }) => {
   return (
-    <div className='prompt_layout sm:mb-40'>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
+      <h3 className="font-bold text-lg mb-2">{post.creator.username}</h3>
+      <p className="text-gray-600 dark:text-gray-300 mb-2">{post.description}</p>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => handleTagClick(post.tag)}
+      >
+        {post.tag}
+      </Button>
+    </div>
+  )
+}
+
+const PromptCardList: React.FC<{ data: Post[], handleTagClick: (tag: string) => void }> = ({ data, handleTagClick }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mb-8">
       {data.map((post) => (
         <motion.div
           key={post._id}
-          className="card"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ ease: "easeOut" }}
@@ -22,142 +54,129 @@ const PromptCardList = ({ data, handleTagClick }) => {
         </motion.div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-const Feed = () => {
-  const [allPosts, setAllPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [searchText, setSearchText] = useState("");
-  const [searchTimeout, setSearchTimeout] = useState(null);
-  const [searchedResults, setSearchedResults] = useState([]);
-  const [selectedTag, setSelectedTag] = useState("My Feeds");
-  const scrollRef = useRef(null);
+const Feed: React.FC = () => {
+  const [allPosts, setAllPosts] = useState<Post[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [searchText, setSearchText] = useState("")
+  const [selectedTag, setSelectedTag] = useState("All Feeds")
+  const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Fetch posts from API
   const fetchPosts = async () => {
-    if (isLoading) return;
+    if (isLoading) return
 
-    setIsLoading(true);
-    const response = await fetch("/api/post");
-    const data = await response.json();
+    setIsLoading(true)
+    try {
+      const response = await fetch("/api/post")
+      const data: Post[] = await response.json()
 
-    // Prepend new posts to the beginning of the list
-    setAllPosts((prevPosts) => {
-      const newPosts = data.filter(post => !prevPosts.some(existingPost => existingPost._id === post._id));
-      return [...newPosts, ...prevPosts];
-    });
-    setIsLoading(false);
-  };
-
-  // Handle scroll event to load more posts
-  const handleScroll = () => {
-    const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
-    if (scrollTop + clientHeight >= scrollHeight - 10 && !isLoading) {
-      fetchPosts();
+      setAllPosts((prevPosts) => {
+        const newPosts = data.filter(post => !prevPosts.some(existingPost => existingPost._id === post._id))
+        return [...newPosts, ...prevPosts]
+      })
+    } catch (error) {
+      console.error("Error fetching posts:", error)
+    } finally {
+      setIsLoading(false)
     }
-  };
+  }
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  useEffect(() => {
+  const handleScroll = useCallback(() => {
     if (scrollRef.current) {
-      scrollRef.current.addEventListener("scroll", handleScroll);
+      const { scrollTop, scrollHeight, clientHeight } = scrollRef.current
+      if (scrollTop + clientHeight >= scrollHeight - 10 && !isLoading) {
+        fetchPosts()
+      }
+    }
+  }, [isLoading])
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
+  useEffect(() => {
+    const scrollElement = scrollRef.current
+    if (scrollElement) {
+      scrollElement.addEventListener("scroll", handleScroll)
     }
 
     return () => {
-      if (scrollRef.current) {
-        scrollRef.current.removeEventListener("scroll", handleScroll);
+      if (scrollElement) {
+        scrollElement.removeEventListener("scroll", handleScroll)
       }
-    };
-  }, [handleScroll]);
+    }
+  }, [handleScroll])
 
-  // Filter posts based on search text
-  const filterPrompts = (searchText) => {
-    const regex = new RegExp(searchText, "i");
-    return allPosts.filter(
-      (item) =>
-        regex.test(item.creator.username) ||
-        regex.test(item.tag) ||
-        regex.test(item.description)
-    );
-  };
+  const filterPosts = useCallback(() => {
+    return allPosts.filter((post) => {
+      const matchesSearch = searchText === "" || 
+        post.creator.username.toLowerCase().includes(searchText.toLowerCase()) ||
+        post.tag.toLowerCase().includes(searchText.toLowerCase()) ||
+        post.description.toLowerCase().includes(searchText.toLowerCase())
 
-  // Handle input changes for search
-  const handleSearchChange = (e) => {
-    clearTimeout(searchTimeout);
-    setSearchText(e.target.value);
+      const matchesTag = selectedTag === "All Feeds" || post.tag === selectedTag
 
-    // Debounce method
-    setSearchTimeout(
-      setTimeout(() => {
-        const searchResult = filterPrompts(e.target.value);
-        setSearchedResults(searchResult);
-      }, 500)
-    );
-  };
+      return matchesSearch && matchesTag
+    })
+  }, [allPosts, searchText, selectedTag])
 
-  const handleTagClick = (tagName) => {
-    setSelectedTag(tagName);
-  };
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value)
+  }
+
+  const handleTagClick = (tagName: string) => {
+    setSelectedTag(tagName)
+  }
 
   const getUniqueTags = () => {
-    const tags = allPosts.map(post => post.tag);
-    return ["My Feeds", ...new Set(tags)];
-  };
+    const tags = allPosts.map(post => post.tag)
+    return ["All Feeds", ...new Set(tags)]
+  }
 
-  const displayedPosts = selectedTag === "My Feeds"
-    ? allPosts
-    : allPosts.filter(post => post.tag === selectedTag);
+  const filteredPosts = filterPosts()
 
   return (
-    <section className="feed" ref={scrollRef}>
-      <form className="relative w-full">
-        
-          <div className="block md:flex w-full items-center justify-between p-1 md:p-2">
-          <div className="tags mb-4">
-            <div className="tabs-container">
-              <div className="tabs-list">
-                {getUniqueTags().map((tag) => (
-                  <button
-                    key={tag}
-                    onClick={() => handleTagClick(tag)}
-                    className={`tab-button ${selectedTag === tag ? 'bg-green-500 text-blue' : 'bg-gray-200 text-black dark:bg-black dark:text-white'}`}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
-            </div>
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
+        <div className="flex flex-wrap gap-2">
+          {getUniqueTags().map((tag) => (
+            <Button
+              key={tag}
+              variant="ghost"
+              size="sm"
+              onClick={() => handleTagClick(tag)}
+              className={selectedTag === tag ? "text-primary border-primary" : ""}
+            >
+              {tag}
+            </Button>
+          ))}
+        </div>
+        <div className="relative w-full sm:w-64">
+          <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="text"
+            placeholder="Search posts..."
+            value={searchText}
+            onChange={handleSearchChange}
+            className="pl-8"
+          />
+        </div>
+      </div>
+      <ScrollArea className="h-[calc(100vh-200px)]" ref={scrollRef}>
+        <PromptCardList
+          data={filteredPosts}
+          handleTagClick={handleTagClick}
+        />
+        {isLoading && (
+          <div className="flex justify-center items-center py-4">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="relative w-full justify-start text-sm text-muted-foreground">
-              <input
-                type="text"
-                placeholder="Search post ..."
-                value={searchText}
-                onChange={handleSearchChange}
-                className="relative inline-flex h-9 w-full items-center justify-start rounded-md border border-input bg-transparent pl-2 py-2 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 sm:pr-12 md:w-40 lg:w-64"
-              />
-              <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-                <span className="p-1 text-xs">⌘</span>S
-              </kbd>
-            </div>
-          </div>
-           
-          </div>
-         
-      
-      </form>
+        )}
+      </ScrollArea>
+    </div>
+  )
+}
 
-      <PromptCardList
-        data={searchText ? searchedResults : displayedPosts}
-        handleTagClick={handleTagClick}
-      />
-    </section>
-  );
-};
-
-export default Feed;
+export default Feed

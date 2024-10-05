@@ -14,7 +14,7 @@ import { FiBell } from 'react-icons/fi'
 import  Nav  from "@/components/Nav"
 import Lottie from "lottie-react"
 import animationData from "app/assets/logo.json"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import { BellIcon, EyeNoneIcon, PersonIcon } from "@radix-ui/react-icons"
 import {
   DropdownMenu,
@@ -51,7 +51,7 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <ModeToggle />
-          <nav className="hidden">           
+          <nav className="">           
               <Nav />         
           </nav>
         </div>
